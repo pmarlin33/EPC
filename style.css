@@ -290,34 +290,11 @@ p {
   flex-shrink: 0;
 }
 
-.nav__logo-text {
-  font-family: var(--font-head);
-  font-size: 0.95rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  color: var(--white);
-  transition: color 0.3s var(--ease);
-}
-
-.nav--scrolled .nav__logo-text {
-  color: var(--anthracite);
-}
-
-.nav__logo-sub {
-  display: block;
-  font-family: var(--font-body);
-  font-size: 0.62rem;
-  font-weight: 400;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.45);
-  margin-top: 1px;
-  transition: color 0.3s var(--ease);
-}
-
-.nav--scrolled .nav__logo-sub {
-  color: var(--anthracite);
-  opacity: 0.5;
+.nav__logo-img {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+  transition: opacity 0.3s var(--ease);
 }
 
 .nav__links {
