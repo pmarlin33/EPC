@@ -316,7 +316,8 @@ p {
 }
 
 .nav--scrolled .nav__logo-sub {
-  color: var(--grey-text);
+  color: var(--anthracite);
+  opacity: 0.5;
 }
 
 .nav__links {
@@ -335,17 +336,18 @@ p {
 }
 
 .nav--scrolled .nav__links a {
-  color: var(--grey-text);
+  color: var(--anthracite);
 }
 
 .nav__links a:hover,
 .nav--scrolled .nav__links a:hover {
-  color: var(--anthracite);
+  color: var(--blue-elec);
 }
 
 .nav__links a.active,
 .nav--scrolled .nav__links a.active {
   color: var(--anthracite);
+  font-weight: 600;
 }
 
 .nav__cta {

@@ -13,9 +13,11 @@
 
   if (!nav) return;
 
-  // Scrolled state
+  // Pages sans hero sombre → nav toujours en état scrollé
+  const hasHero = !!document.querySelector('.hero');
+
   function onScroll() {
-    if (window.scrollY > 48) {
+    if (!hasHero || window.scrollY > 48) {
       nav.classList.add('nav--scrolled');
     } else {
       nav.classList.remove('nav--scrolled');
