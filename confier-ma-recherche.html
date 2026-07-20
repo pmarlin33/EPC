@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ─── SEO ─── -->
+  <title>Confier ma recherche — Electric Premium Cars</title>
+  <meta name="description" content="Décrivez-nous votre projet de véhicule électrique premium. Electric Premium Cars prend en charge la recherche, la négociation et l'acquisition pour vous. Réponse sous 24h." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.electricpremiumcars.fr/confier-ma-recherche.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Confier ma recherche — Electric Premium Cars" />
+  <meta property="og:description" content="Décrivez-nous votre projet de véhicule électrique premium. Accompagnement personnalisé, réponse sous 24h." />
+  <meta property="og:url" content="https://www.electricpremiumcars.fr/confier-ma-recherche.html" />
+  <meta property="og:locale" content="fr_FR" />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Confier ma recherche — Electric Premium Cars",
+    "description": "Formulaire de contact pour confier votre projet d'acquisition de véhicule électrique premium à Electric Premium Cars",
+    "url": "https://www.electricpremiumcars.fr/confier-ma-recherche.html",
+    "mainEntity": {
+      "@type": "ProfessionalService",
+      "name": "Electric Premium Cars",
+      "url": "https://www.electricpremiumcars.fr"
+    }
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* ── Page-specific styles ── */
+    .page-hero {
+      padding-top: calc(var(--nav-h) + 80px);
+      padding-bottom: 80px;
+      background: var(--white);
+      border-bottom: 1px solid var(--grey-light);
+    }
+
+    .page-hero__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .page-hero__label {
+      display: block;
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--blue-elec);
+      margin-bottom: 16px;
+    }
+
+    .page-hero h1 {
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 600;
+      margin-bottom: 20px;
+      line-height: 1.1;
+    }
+
+    .page-hero__sub {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--grey-text);
+      max-width: 420px;
+    }
+
+    .page-hero__promises {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .page-hero__promise {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--grey-light);
+    }
+
+    .page-hero__promise:first-child {
+      border-top: 1px solid var(--grey-light);
+    }
+
+    .page-hero__promise-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--blue-subtle);
+      border: 1px solid var(--blue-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--blue-elec);
+      margin-top: 2px;
+    }
+
+    .page-hero__promise h3 {
+      font-size: 0.92rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: var(--anthracite);
+    }
+
+    .page-hero__promise p {
+      font-size: 0.83rem;
+      line-height: 1.65;
+      color: var(--grey-text);
+    }
+
+    /* ── Form section ── */
+    .form-page {
+      padding: 80px 0 120px;
+      background: var(--off-white);
+    }
+
+    .form-page__inner {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .form-page__sidebar {
+      position: sticky;
+      top: calc(var(--nav-h) + 32px);
+    }
+
+    .form-page__sidebar h2 {
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      margin-bottom: 16px;
+      line-height: 1.15;
+    }
+
+    .form-page__sidebar p {
+      font-size: 0.93rem;
+      line-height: 1.8;
+      margin-bottom: 32px;
+    }
+
+    .form-page__contact {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .form-page__contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--grey-light);
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      color: var(--anthracite);
+    }
+
+    .form-page__contact-item:first-child {
+      border-top: 1px solid var(--grey-light);
+    }
+
+    .form-page__contact-item svg {
+      color: var(--blue-elec);
+      flex-shrink: 0;
+    }
+
+    .form-page__contact-item a {
+      color: var(--anthracite);
+      transition: color 0.2s var(--ease);
+    }
+
+    .form-page__contact-item a:hover {
+      color: var(--blue-elec);
+    }
+
+    /* ── Form card ── */
+    .form-card {
+      background: var(--white);
+      border: 1px solid var(--grey-light);
+      border-radius: var(--radius-lg);
+      padding: 48px;
+    }
+
+    .form-card__title {
+      font-family: var(--font-head);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--anthracite);
+      margin-bottom: 8px;
+      letter-spacing: -0.01em;
+    }
+
+    .form-card__sub {
+      font-size: 0.83rem;
+      color: var(--grey-text);
+      margin-bottom: 36px;
+      line-height: 1.6;
+    }
+
+    /* Override form grid for this page */
+    .form-card .form__grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 1024px) {
+      .page-hero__inner { grid-template-columns: 1fr; gap: 48px; }
+      .form-page__inner { grid-template-columns: 1fr; gap: 48px; }
+      .form-page__sidebar { position: static; }
+    }
+
+    @media (max-width: 768px) {
+      .page-hero { padding-top: calc(var(--nav-h) + 48px); padding-bottom: 56px; }
+      .form-card { padding: 28px 20px; }
+      .form-card .form__grid { grid-template-columns: 1fr; }
+      .form-card .form__group--full { grid-column: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════════ -->
+  <nav class="nav nav--scrolled" id="nav" role="navigation" aria-label="Navigation principale">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="Electric Premium Cars — Accueil">
+        <div>
+          <span class="nav__logo-text">Electric Premium Cars</span>
+          <span class="nav__logo-sub">Cabinet de courtage</span>
+        </div>
+      </a>
+
+      <ul class="nav__links" role="list">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="index.html#methode">Notre méthode</a></li>
+        <li><a href="index.html#acquisitions">Acquisitions</a></li>
+        <li><a href="confier-ma-recherche.html" class="active" aria-current="page">Confier ma recherche</a></li>
+      </ul>
+
+      <a href="confier-ma-recherche.html" class="btn btn--primary btn--sm nav__cta" style="background: var(--anthracite); color: var(--white); border-color: var(--anthracite);">Confier ma recherche</a>
+
+      <button class="nav__burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="nav__mobile" id="mobileMenu" aria-hidden="true">
+      <a href="index.html">Accueil</a>
+      <a href="index.html#methode">Notre méthode</a>
+      <a href="index.html#acquisitions">Acquisitions</a>
+      <a href="confier-ma-recherche.html">Confier ma recherche</a>
+      <a href="confier-ma-recherche.html" class="btn btn--primary" style="margin-top:8px; text-align:center;">Confier ma recherche</a>
+    </div>
+  </nav>
+
+
+  <!-- ═══════════════════════════════════════════
+       PAGE HERO
+  ═══════════════════════════════════════════ -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero__inner">
+
+        <div>
+          <span class="page-hero__label reveal">Première étape</span>
+          <h1 class="reveal reveal-delay-1">Confiez-nous<br>votre projet.</h1>
+          <p class="page-hero__sub reveal reveal-delay-2">
+            Décrivez-nous votre projet en quelques lignes. Nous vous revenons sous 24 heures ouvrées pour définir ensemble les premières étapes de votre acquisition.
+          </p>
+        </div>
+
+        <div class="page-hero__promises reveal reveal-delay-2">
+
+          <div class="page-hero__promise">
+            <div class="page-hero__promise-icon" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <h3>Réponse sous 24 heures</h3>
+              <p>Un expert vous contacte rapidement pour qualifier votre projet et vous présenter les premières pistes.</p>
+            </div>
+          </div>
+
+          <div class="page-hero__promise">
+            <div class="page-hero__promise-icon" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+            </div>
+            <div>
+              <h3>Sans engagement</h3>
+              <p>Ce premier échange est gratuit et sans engagement. Le mandat de courtage est signé uniquement si nous décidons ensemble de collaborer.</p>
+            </div>
+          </div>
+
+          <div class="page-hero__promise">
+            <div class="page-hero__promise-icon" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+            <div>
+              <h3>Confidentialité totale</h3>
+              <p>Vos informations sont strictement confidentielles et ne sont jamais transmises à des tiers.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       FORMULAIRE
+  ═══════════════════════════════════════════ -->
+  <section class="form-page" aria-labelledby="form-main-title">
+    <div class="container">
+      <div class="form-page__inner">
+
+        <!-- Sidebar -->
+        <aside class="form-page__sidebar">
+          <span class="label reveal">Nous contacter</span>
+          <h2 class="reveal reveal-delay-1" id="form-main-title">Démarrons votre acquisition.</h2>
+          <p class="reveal reveal-delay-2">
+            Que vous ayez un modèle précis en tête ou que vous souhaitiez simplement explorer les possibilités, nous sommes là pour vous orienter.
+          </p>
+
+          <div class="form-page__contact reveal reveal-delay-3">
+            <div class="form-page__contact-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="mailto:contact@electricpremiumcars.fr">contact@electricpremiumcars.fr</a>
+            </div>
+            <div class="form-page__contact-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.48 2 2 0 0 1 3.59 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.83a16 16 0 0 0 6 6l1.27-.83a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="tel:+33600000000">+33 6 00 00 00 00</a>
+            </div>
+            <div class="form-page__contact-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <span>Réponse sous 24 heures ouvrées</span>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Form card -->
+        <div class="form-card reveal reveal-delay-1" role="main">
+          <p class="form-card__title">Votre projet en quelques mots</p>
+          <p class="form-card__sub">Tous les champs marqués d'un astérisque sont requis.</p>
+
+          <form class="form__grid" action="#" method="POST" id="contact-form" novalidate aria-label="Formulaire de confiance — Electric Premium Cars">
+
+            <div class="form__group">
+              <label class="form__label" for="f-name">Nom complet <span aria-label="requis">*</span></label>
+              <input class="form__input" type="text" id="f-name" name="name" placeholder="Votre nom" autocomplete="name" required />
+            </div>
+
+            <div class="form__group">
+              <label class="form__label" for="f-phone">Téléphone</label>
+              <input class="form__input" type="tel" id="f-phone" name="phone" placeholder="+33 6 00 00 00 00" autocomplete="tel" />
+            </div>
+
+            <div class="form__group form__group--full">
+              <label class="form__label" for="f-email">Adresse e-mail <span aria-label="requis">*</span></label>
+              <input class="form__input" type="email" id="f-email" name="email" placeholder="votre@email.com" autocomplete="email" required />
+            </div>
+
+            <div class="form__group form__group--full">
+              <label class="form__label" for="f-model">Modèle recherché</label>
+              <input class="form__input" type="text" id="f-model" name="model" placeholder="Ex : Porsche Taycan, BMW iX, Mercedes EQS…" />
+            </div>
+
+            <div class="form__group">
+              <label class="form__label" for="f-budget">Budget approximatif</label>
+              <select class="form__select" id="f-budget" name="budget">
+                <option value="" disabled selected>Sélectionner</option>
+                <option value="60-80k">60 000 — 80 000 €</option>
+                <option value="80-120k">80 000 — 120 000 €</option>
+                <option value="120-180k">120 000 — 180 000 €</option>
+                <option value="180k+">Plus de 180 000 €</option>
+              </select>
+            </div>
+
+            <div class="form__group">
+              <label class="form__label" for="f-delay">Délai souhaité</label>
+              <select class="form__select" id="f-delay" name="delay">
+                <option value="" disabled selected>Sélectionner</option>
+                <option value="asap">Le plus tôt possible</option>
+                <option value="1m">Sous 1 mois</option>
+                <option value="3m">Sous 3 mois</option>
+                <option value="flexible">Flexible</option>
+              </select>
+            </div>
+
+            <div class="form__group form__group--full">
+              <label class="form__label" for="f-comment">Précisions sur votre projet</label>
+              <textarea class="form__textarea" id="f-comment" name="comment" placeholder="Options souhaitées, couleur, usage, questions particulières…" rows="5"></textarea>
+            </div>
+
+            <div class="form__submit">
+              <button type="submit" class="btn btn--primary btn--lg" id="form-submit-btn">Démarrer ma recherche</button>
+            </div>
+
+          </form>
+
+          <p class="form__notice">
+            Vos informations sont strictement confidentielles et ne sont jamais transmises à des tiers.<br>
+            Réponse assurée sous 24 heures ouvrées.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__inner">
+
+        <div class="footer__brand">
+          <h3>Electric Premium Cars</h3>
+          <span class="footer__brand-sub">Cabinet de courtage</span>
+          <p>Spécialiste de l'acquisition de véhicules électriques premium en Europe. Recherche, sélection, négociation et accompagnement sur mesure.</p>
+        </div>
+
+        <div class="footer__col">
+          <h4>Navigation</h4>
+          <a href="index.html">Accueil</a>
+          <a href="index.html#methode">Notre méthode</a>
+          <a href="index.html#acquisitions">Acquisitions</a>
+          <a href="confier-ma-recherche.html">Confier ma recherche</a>
+        </div>
+
+        <div class="footer__col">
+          <h4>Notre métier</h4>
+          <a href="index.html#methode">Recherche européenne</a>
+          <a href="index.html#methode">Sélection & expertise</a>
+          <a href="index.html#methode">Négociation</a>
+          <a href="index.html#methode">Acquisition sécurisée</a>
+        </div>
+
+        <div class="footer__col">
+          <h4>Contact</h4>
+          <a href="mailto:contact@electricpremiumcars.fr">contact@electricpremiumcars.fr</a>
+          <a href="tel:+33600000000">+33 6 00 00 00 00</a>
+          <p>Réponse sous 24 heures ouvrées</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>© 2026 Electric Premium Cars — Tous droits réservés</p>
+      <div class="footer__bottom-links">
+        <a href="#">Mentions légales</a>
+        <a href="#">Politique de confidentialité</a>
+        <a href="#">CGV</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
