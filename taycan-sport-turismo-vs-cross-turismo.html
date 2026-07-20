@@ -164,6 +164,10 @@
 
 <nav class="nav" id="nav" role="navigation" aria-label="Navigation principale">
     <div class="nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="Electric Premium Cars — Accueil">
+        <img src="logo.png" alt="Electric Premium Cars" class="nav__logo-img" />
+      </a>
+
 
 
       <ul class="nav__links" role="list">
@@ -322,19 +326,8 @@
   </footer>
 
 
-<script>
-  const nav = document.querySelector('.nav');
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('nav--scrolled', window.scrollY > 40);
-  });
 
-  const burger = document.getElementById('navBurger');
-  const mobileMenu = document.getElementById('navMobile');
-  burger.addEventListener('click', () => {
-    burger.classList.toggle('open');
-    mobileMenu.classList.toggle('open');
-  });
-</script>
 
+  <script src="main.js"></script>
 </body>
 </html>

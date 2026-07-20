@@ -111,32 +111,50 @@
 </head>
 <body>
 
-<nav class="nav nav--scrolled">
-  <div class="nav__inner">
-    <a class="nav__logo" href="index.html">
-      <img class="nav__logo-img" src="logo.png" alt="Electric Premium Cars">
-    </a>
-    <div class="nav__links">
-      <a href="index.html">Accueil</a>
-      <a href="services.html">Services</a>
-      <a href="about.html">À propos</a>
-      <a href="guides.html" class="active">Guides</a>
-      <a href="contact.html">Contact</a>
-    </div>
-    <a href="contact.html" class="btn btn--primary nav__cta">Entretien privé</a>
-    <button class="nav__burger" id="navBurger" aria-label="Ouvrir le menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
+<nav class="nav" id="nav" role="navigation" aria-label="Navigation principale">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="Electric Premium Cars — Accueil">
+        <img src="logo.png" alt="Electric Premium Cars" class="nav__logo-img" />
+      </a>
 
-<div class="nav__mobile" id="navMobile">
-  <a href="index.html">Accueil</a>
-  <a href="services.html">Services</a>
-  <a href="about.html">À propos</a>
-  <a href="guides.html">Guides</a>
-  <a href="contact.html">Contact</a>
-</div>
+
+
+      <ul class="nav__links" role="list">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="#methode">Notre méthode</a></li>
+        <li><a href="vehicules-demandes.html">Véhicules demandés</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="guides.html" class="active" aria-current="page">Guides</a></li>
+        <li><a href="confier-ma-recherche.html">Confier ma recherche</a></li>
+      </ul>
+
+
+
+      <button class="nav__burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="nav__mobile" id="mobileMenu" aria-hidden="true">
+      <a href="index.html">Accueil</a>
+      <a href="#methode">Notre méthode</a>
+      <a href="vehicules-demandes.html">Véhicules demandés</a>
+      <a href="faq.html">FAQ</a>
+      <a href="guides.html">Guides</a>
+      <a href="confier-ma-recherche.html">Confier ma recherche</a>
+      <a href="confier-ma-recherche.html" class="btn btn--primary" style="margin-top:8px; text-align:center;">Confier ma recherche</a>
+    </div>
+  </nav>
+
+<div class="nav__mobile" id="mobileMenu" aria-hidden="true">
+      <a href="index.html">Accueil</a>
+      <a href="#methode">Notre méthode</a>
+      <a href="vehicules-demandes.html">Véhicules demandés</a>
+      <a href="faq.html">FAQ</a>
+      <a href="guides.html">Guides</a>
+      <a href="confier-ma-recherche.html">Confier ma recherche</a>
+      <a href="confier-ma-recherche.html" class="btn btn--primary" style="margin-top:8px; text-align:center;">Confier ma recherche</a>
+    </div>
 
 <section class="guides-hero section--sm">
   <div class="container">
@@ -271,37 +289,8 @@
     </div>
   </footer>
 
-<script>
-  // Nav scroll state (cohérent avec le comportement défini dans style.css)
-  const nav = document.querySelector('.nav');
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('nav--scrolled', window.scrollY > 40);
-  });
 
-  // Menu mobile
-  const burger = document.getElementById('navBurger');
-  const mobileMenu = document.getElementById('navMobile');
-  burger.addEventListener('click', () => {
-    burger.classList.toggle('open');
-    mobileMenu.classList.toggle('open');
-  });
 
-  // Filtre par catégorie
-  const filterButtons = document.querySelectorAll('.guides__filter-btn');
-  const cards = document.querySelectorAll('.guide-card');
-
-  filterButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterButtons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const filter = btn.dataset.filter;
-
-      cards.forEach(card => {
-        card.style.display = (filter === 'all' || card.dataset.category === filter) ? '' : 'none';
-      });
-    });
-  });
-</script>
-
+  <script src="main.js"></script>
 </body>
 </html>

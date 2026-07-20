@@ -206,3 +206,31 @@ document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
 
   window.addEventListener('scroll', onScroll, { passive: true });
 })();
+
+/* ─── GUIDES FILTER ─── */
+(function initGuidesFilter() {
+  const filterBtns = document.querySelectorAll('.guides__filter-btn');
+  const cards = document.querySelectorAll('.guide-card');
+
+  if (!filterBtns.length || !cards.length) return;
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Retirer la classe active de tous les boutons
+      filterBtns.forEach(b => b.classList.remove('active'));
+      // Ajouter la classe active au bouton cliqué
+      btn.classList.add('active');
+
+      const filterValue = btn.getAttribute('data-filter');
+
+      // Filtrer les cartes
+      cards.forEach(card => {
+        if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+})();
