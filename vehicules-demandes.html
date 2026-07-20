@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ─── SEO ─── -->
+  <title>Véhicules les plus demandés — Electric Premium Cars</title>
+  <meta name="description" content="Découvrez les modèles électriques premium les plus recherchés par nos clients : Porsche Taycan, Audi e-tron GT, Mercedes EQS, BMW iX et plus encore." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.electricpremiumcars.fr/vehicules-demandes.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Véhicules les plus demandés — Electric Premium Cars" />
+  <meta property="og:description" content="Découvrez les modèles électriques premium les plus recherchés par nos clients et nos exemples d'acquisitions." />
+  <meta property="og:url" content="https://www.electricpremiumcars.fr/vehicules-demandes.html" />
+  <meta property="og:locale" content="fr_FR" />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Véhicules les plus demandés — Electric Premium Cars",
+    "description": "Catalogue des véhicules électriques premium les plus demandés par les clients du cabinet de courtage Electric Premium Cars."
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* ── Page-specific styles ── */
+    .demandes-hero {
+      padding-top: calc(var(--nav-h) + 80px);
+      padding-bottom: 80px;
+      background: var(--white);
+      border-bottom: 1px solid var(--grey-light);
+      text-align: center;
+    }
+
+    .demandes-hero h1 {
+      margin-bottom: 16px;
+    }
+
+    .demandes-hero p {
+      font-size: 1rem;
+      max-width: 540px;
+      margin: 0 auto;
+      line-height: 1.8;
+      color: var(--grey-text);
+    }
+
+    /* ── Grid ── */
+    .catalog-section {
+      padding: 100px 0;
+      background: var(--off-white);
+    }
+
+    .catalog-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+    }
+
+    .vehicle-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--grey-light);
+      transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .vehicle-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.06);
+    }
+
+    .vehicle-card__img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+    }
+
+    .vehicle-card__content {
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .vehicle-card__brand {
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--grey-text);
+      margin-bottom: 8px;
+    }
+
+    .vehicle-card__model {
+      font-family: var(--font-head);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--anthracite);
+      margin-bottom: 16px;
+    }
+
+    .vehicle-card__desc {
+      font-size: 0.9rem;
+      color: var(--grey-text);
+      line-height: 1.6;
+      margin-bottom: 24px;
+      flex-grow: 1;
+    }
+
+    .vehicle-card__footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 24px;
+      border-top: 1px solid var(--grey-light);
+    }
+
+    .vehicle-card__price {
+      font-weight: 600;
+      color: var(--anthracite);
+    }
+
+    .vehicle-card__price span {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: var(--grey-text);
+      margin-right: 6px;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 992px) {
+      .catalog-grid {
+        grid-template-columns: 1fr;
+      }
+      .vehicle-card__img {
+        height: 280px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .demandes-hero {
+        padding-top: calc(var(--nav-h) + 48px);
+        padding-bottom: 56px;
+      }
+      .vehicle-card__content {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════════ -->
+  <nav class="nav" id="nav" role="navigation" aria-label="Navigation principale">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="Electric Premium Cars — Accueil">
+        <div>
+          <span class="nav__logo-text">Electric Premium Cars</span>
+          <span class="nav__logo-sub">Cabinet de courtage</span>
+        </div>
+      </a>
+
+      <ul class="nav__links" role="list">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="index.html#methode">Notre méthode</a></li>
+        <li><a href="vehicules-demandes.html" class="active" aria-current="page">Véhicules demandés</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="confier-ma-recherche.html">Confier ma recherche</a></li>
+      </ul>
+
+      <button class="nav__burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="nav__mobile" id="mobileMenu" aria-hidden="true">
+      <a href="index.html">Accueil</a>
+      <a href="index.html#methode">Notre méthode</a>
+      <a href="vehicules-demandes.html">Véhicules demandés</a>
+      <a href="faq.html">FAQ</a>
+      <a href="confier-ma-recherche.html">Confier ma recherche</a>
+      <a href="confier-ma-recherche.html" class="btn btn--primary" style="margin-top:8px; text-align:center;">Confier ma recherche</a>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════
+       PAGE HERO
+  ═══════════════════════════════════════════ -->
+  <section class="demandes-hero">
+    <div class="container">
+      <span class="label reveal" style="justify-content: center; display: flex;">Sélection d'excellence</span>
+      <h1 class="reveal reveal-delay-1">Les modèles les plus demandés.</h1>
+      <p class="reveal reveal-delay-2">
+        Découvrez les véhicules électriques premium que nous recherchons et importons le plus fréquemment pour nos clients à travers l'Europe, avec des décotes significatives.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       CATALOGUE
+  ═══════════════════════════════════════════ -->
+  <section class="catalog-section" aria-label="Catalogue des véhicules">
+    <div class="container">
+      <div class="catalog-grid">
+
+        <!-- Porsche Taycan -->
+        <article class="vehicle-card reveal">
+          <img src="taycan.jpg" alt="Porsche Taycan Sport Turismo blanc" class="vehicle-card__img" loading="lazy" />
+          <div class="vehicle-card__content">
+            <span class="vehicle-card__brand">Porsche</span>
+            <h2 class="vehicle-card__model">Taycan & Taycan Cross Turismo</h2>
+            <p class="vehicle-card__desc">
+              Le fer de lance de la sportivité électrique. Particulièrement recherché en version 4S ou Turbo, avec de très fortes opportunités sur le marché allemand.
+            </p>
+            <div class="vehicle-card__footer">
+              <div class="vehicle-card__price"><span>Avantage client moyen</span>- 25 à 45 k€</div>
+              <a href="confier-ma-recherche.html?modele=Taycan" class="btn btn--outline btn--sm">Rechercher ce modèle</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Audi e-tron GT -->
+        <article class="vehicle-card reveal reveal-delay-1">
+          <img src="audi_etron_gt.jpg" alt="Audi e-tron GT gris" class="vehicle-card__img" loading="lazy" />
+          <div class="vehicle-card__content">
+            <span class="vehicle-card__brand">Audi</span>
+            <h2 class="vehicle-card__model">e-tron GT & RS e-tron GT</h2>
+            <p class="vehicle-card__desc">
+              La grande routière sculpturale d'Ingolstadt. Cousine technique du Taycan, elle offre un confort souverain et une ligne époustouflante, avec des décotes très avantageuses en seconde main récente.
+            </p>
+            <div class="vehicle-card__footer">
+              <div class="vehicle-card__price"><span>Avantage client moyen</span>- 30 à 50 k€</div>
+              <a href="confier-ma-recherche.html?modele=etronGT" class="btn btn--outline btn--sm">Rechercher ce modèle</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Mercedes EQS -->
+        <article class="vehicle-card reveal">
+          <img src="mercedes_eqs.jpg" alt="Mercedes EQS noire" class="vehicle-card__img" loading="lazy" />
+          <div class="vehicle-card__content">
+            <span class="vehicle-card__brand">Mercedes-Benz</span>
+            <h2 class="vehicle-card__model">EQS Berline & SUV</h2>
+            <p class="vehicle-card__desc">
+              Le summum du luxe technologique et du silence. L'Hyperscreen et l'autonomie record en font la reine des longs trajets. Le marché européen regorge de modèles de direction suréquipés.
+            </p>
+            <div class="vehicle-card__footer">
+              <div class="vehicle-card__price"><span>Avantage client moyen</span>- 40 à 65 k€</div>
+              <a href="confier-ma-recherche.html?modele=EQS" class="btn btn--outline btn--sm">Rechercher ce modèle</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- BMW iX -->
+        <article class="vehicle-card reveal reveal-delay-1">
+          <img src="bmw_ix.jpg" alt="BMW iX blanc" class="vehicle-card__img" loading="lazy" />
+          <div class="vehicle-card__content">
+            <span class="vehicle-card__brand">BMW</span>
+            <h2 class="vehicle-card__model">iX xDrive40 & xDrive50</h2>
+            <p class="vehicle-card__desc">
+              Le SUV avant-gardiste de BMW. Un salon roulant offrant une insonorisation exceptionnelle et un système multimédia de pointe. Très plébiscité par les familles recherchant le haut de gamme électrique.
+            </p>
+            <div class="vehicle-card__footer">
+              <div class="vehicle-card__price"><span>Avantage client moyen</span>- 25 à 40 k€</div>
+              <a href="confier-ma-recherche.html?modele=iX" class="btn btn--outline btn--sm">Rechercher ce modèle</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Porsche Macan -->
+        <article class="vehicle-card reveal">
+          <img src="macan.jpg" alt="Porsche Macan électrique bleu" class="vehicle-card__img" loading="lazy" />
+          <div class="vehicle-card__content">
+            <span class="vehicle-card__brand">Porsche</span>
+            <h2 class="vehicle-card__model">Nouveau Macan (Électrique)</h2>
+            <p class="vehicle-card__desc">
+              La nouvelle génération exclusivement électrique du best-seller Porsche. Les premiers modèles commencent à arriver sur le marché européen avec des disponibilités plus rapides qu'en concession.
+            </p>
+            <div class="vehicle-card__footer">
+              <div class="vehicle-card__price"><span>Disponibilité</span>Immédiate (Europe)</div>
+              <a href="confier-ma-recherche.html?modele=Macan" class="btn btn--outline btn--sm">Rechercher ce modèle</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- BMW i4 -->
+        <article class="vehicle-card reveal reveal-delay-1">
+          <img src="bmw_i4.jpg" alt="BMW i4 noire" class="vehicle-card__img" loading="lazy" />
+          <div class="vehicle-card__content">
+            <span class="vehicle-card__brand">BMW</span>
+            <h2 class="vehicle-card__model">i4 eDrive40 & M50</h2>
+            <p class="vehicle-card__desc">
+              Le Gran Coupé dynamique par excellence. L'alliance parfaite entre le comportement sportif typique de la marque bavaroise et l'efficience électrique, très demandé sur le marché de l'occasion récente.
+            </p>
+            <div class="vehicle-card__footer">
+              <div class="vehicle-card__price"><span>Avantage client moyen</span>- 15 à 25 k€</div>
+              <a href="confier-ma-recherche.html?modele=i4" class="btn btn--outline btn--sm">Rechercher ce modèle</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       CTA FINAL
+  ═══════════════════════════════════════════ -->
+  <section class="section" style="background: var(--anthracite); color: var(--white); text-align: center; padding: 100px 0;">
+    <div class="container">
+      <h2 class="reveal" style="color: var(--white); margin-bottom: 24px; font-size: clamp(1.8rem, 3vw, 2.5rem);">Vous recherchez un autre modèle ?</h2>
+      <p class="reveal reveal-delay-1" style="color: rgba(255,255,255,0.7); max-width: 600px; margin: 0 auto 40px; line-height: 1.6;">
+        Lotus Eletre, Mercedes EQE, Tesla Model S Plaid... Notre réseau couvre l'intégralité du marché premium européen. Décrivez-nous votre projet.
+      </p>
+      <a href="confier-ma-recherche.html" class="btn btn--primary btn--lg reveal reveal-delay-2" style="background: var(--white); color: var(--anthracite); border-color: var(--white);">
+        Démarrer ma recherche
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__inner">
+
+        <div class="footer__brand">
+          <h3>Electric Premium Cars</h3>
+          <span class="footer__brand-sub">Cabinet de courtage</span>
+          <p>Spécialiste de l'acquisition de véhicules électriques premium en Europe. Recherche, sélection, négociation et accompagnement sur mesure.</p>
+        </div>
+
+        <div class="footer__col">
+          <h4>Navigation</h4>
+          <a href="index.html">Accueil</a>
+          <a href="index.html#methode">Notre méthode</a>
+          <a href="vehicules-demandes.html">Véhicules demandés</a>
+          <a href="faq.html">FAQ</a>
+          <a href="confier-ma-recherche.html">Confier ma recherche</a>
+        </div>
+
+        <div class="footer__col">
+          <h4>Notre métier</h4>
+          <a href="index.html#methode">Recherche européenne</a>
+          <a href="index.html#methode">Sélection & expertise</a>
+          <a href="index.html#methode">Négociation</a>
+          <a href="index.html#methode">Acquisition sécurisée</a>
+        </div>
+
+        <div class="footer__col">
+          <h4>Contact</h4>
+          <a href="mailto:contact@electricpremiumcars.fr">contact@electricpremiumcars.fr</a>
+          <a href="tel:+33600000000">+33 6 00 00 00 00</a>
+          <p>Réponse sous 24 heures ouvrées</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>© 2026 Electric Premium Cars — Tous droits réservés</p>
+      <div class="footer__bottom-links">
+        <a href="#">Mentions légales</a>
+        <a href="#">Politique de confidentialité</a>
+        <a href="#">CGV</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
