@@ -387,14 +387,11 @@
             </div>
 
             <div class="form__group">
-              <label class="form__label" for="f-budget">Budget approximatif</label>
-              <select class="form__select" id="f-budget" name="budget">
-                <option value="" disabled selected>Sélectionner</option>
-                <option value="60-80k">60 000 — 80 000 €</option>
-                <option value="80-120k">80 000 — 120 000 €</option>
-                <option value="120-180k">120 000 — 180 000 €</option>
-                <option value="180k+">Plus de 180 000 €</option>
-              </select>
+              <label class="form__label">Budget</label>
+              <div style="display: flex; gap: 12px;">
+                <input class="form__input" type="number" id="f-budget-min" name="budget_min" placeholder="Min" min="0" step="1000" />
+                <input class="form__input" type="number" id="f-budget-max" name="budget_max" placeholder="Max" min="0" step="1000" />
+              </div>
             </div>
 
             <div class="form__group">
