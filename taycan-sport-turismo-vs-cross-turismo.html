@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Porsche Taycan Sport Turismo vs Cross Turismo — Electric Premium Cars</title>
+<meta name="description" content="Comparatif complet entre le Taycan Sport Turismo et le Cross Turismo : technique, usage et valeur de revente.">
+<link rel="stylesheet" href="style.css">
+<style>
+  /* ─── ARTICLE — composants spécifiques, construits avec les tokens existants ─── */
+
+  .article-back {
+    padding-top: calc(var(--nav-h) + 48px);
+  }
+
+  .article-back__inner {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  .article-back a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-head);
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--grey-text);
+    transition: color 0.2s var(--ease);
+  }
+
+  .article-back a:hover { color: var(--blue-elec); }
+
+  .article-hero {
+    padding: 32px 0 56px;
+  }
+
+  .article-hero__inner {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  .article-hero h1 {
+    font-size: clamp(2rem, 4vw, 2.9rem);
+    margin: 18px 0 20px;
+  }
+
+  .article-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    color: var(--grey-text);
+    letter-spacing: 0.02em;
+  }
+
+  .article-meta__dot {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: var(--grey-mid);
+  }
+
+  .article-body {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 40px 100px;
+  }
+
+  .article-body p {
+    color: #3f3f3d;
+    font-size: 1.02rem;
+    line-height: 1.85;
+    margin-bottom: 26px;
+  }
+
+  .article-body h2 {
+    font-size: 1.55rem;
+    margin: 56px 0 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--grey-light);
+  }
+
+  .article-body h3 {
+    font-size: 1.1rem;
+    margin: 36px 0 14px;
+  }
+
+  .article-body ul, .article-body ol {
+    margin: 0 0 26px;
+    padding-left: 22px;
+  }
+
+  .article-body ul { list-style: disc; }
+  .article-body ol { list-style: decimal; }
+
+  .article-body li {
+    color: #3f3f3d;
+    font-size: 1.02rem;
+    line-height: 1.8;
+    margin-bottom: 10px;
+  }
+
+  .article-body strong {
+    color: var(--anthracite);
+    font-weight: 600;
+  }
+
+  .article-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 8px 0 32px;
+    font-size: 0.9rem;
+  }
+
+  .article-body th {
+    text-align: left;
+    font-family: var(--font-head);
+    font-weight: 600;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--grey-text);
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--grey-mid);
+  }
+
+  .article-body td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--grey-light);
+    color: var(--anthracite);
+  }
+
+  .article-body em {
+    color: var(--grey-text);
+    font-style: normal;
+    font-size: 0.9rem;
+  }
+
+  .article-cta {
+    background: var(--anthracite);
+    border-radius: var(--radius-lg);
+    padding: 48px 44px;
+    margin-top: 24px;
+    text-align: center;
+  }
+
+  .article-cta p {
+    color: rgba(255,255,255,0.6);
+    font-size: 1rem;
+    margin-bottom: 24px;
+  }
+
+  @media (max-width: 640px) {
+    .article-back__inner, .article-hero__inner, .article-body { padding-left: 24px; padding-right: 24px; }
+    .article-cta { padding: 36px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav" role="navigation" aria-label="Navigation principale">
+    <div class="nav__inner">
+
+
+      <ul class="nav__links" role="list">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="#methode">Notre méthode</a></li>
+        <li><a href="vehicules-demandes.html">Véhicules demandés</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="guides.html" class="active" aria-current="page">Guides</a></li>
+        <li><a href="confier-ma-recherche.html">Confier ma recherche</a></li>
+      </ul>
+
+
+
+      <button class="nav__burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="nav__mobile" id="mobileMenu" aria-hidden="true">
+      <a href="index.html">Accueil</a>
+      <a href="#methode">Notre méthode</a>
+      <a href="vehicules-demandes.html">Véhicules demandés</a>
+      <a href="faq.html">FAQ</a>
+      <a href="guides.html">Guides</a>
+      <a href="confier-ma-recherche.html">Confier ma recherche</a>
+      <a href="confier-ma-recherche.html" class="btn btn--primary" style="margin-top:8px; text-align:center;">Confier ma recherche</a>
+    </div>
+  </nav>
+
+<div class="nav__mobile" id="mobileMenu" aria-hidden="true">
+      <a href="index.html">Accueil</a>
+      <a href="#methode">Notre méthode</a>
+      <a href="vehicules-demandes.html">Véhicules demandés</a>
+      <a href="faq.html">FAQ</a>
+      <a href="guides.html">Guides</a>
+      <a href="confier-ma-recherche.html">Confier ma recherche</a>
+      <a href="confier-ma-recherche.html" class="btn btn--primary" style="margin-top:8px; text-align:center;">Confier ma recherche</a>
+    </div>
+
+
+<div class="article-back">
+  <div class="article-back__inner">
+    <a href="guides.html"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg> Tous les guides</a>
+  </div>
+</div>
+
+<section class="article-hero">
+  <div class="article-hero__inner">
+    <span class="label">Comparatifs & modèles</span>
+    <h1>Porsche Taycan Sport Turismo vs Cross Turismo : lequel choisir ?</h1>
+    <div class="article-meta">
+      <span>Electric Premium Cars</span>
+      <span class="article-meta__dot"></span>
+      <span>6 min de lecture</span>
+    </div>
+  </div>
+</section>
+
+<article class="article-body">
+
+  <p>Vous hésitez entre les deux carrosseries break de la gamme Porsche Taycan ? C'est une question que nous recevons régulièrement dans le cadre de nos mandats de recherche. Le Sport Turismo et le Cross Turismo partagent la même base technique, mais répondent à deux usages très différents. Voici un comparatif complet pour vous aider à trancher.</p>
+
+  <h2>Deux carrosseries, une même plateforme</h2>
+  <p>Le Sport Turismo et le Cross Turismo sont tous deux des déclinaisons break du Taycan, construites sur la même plateforme électrique et proposant les mêmes motorisations. La différence ne se joue donc pas sur la mécanique, mais sur la vocation de chaque modèle.</p>
+  <p>Le <strong>Sport Turismo</strong> reste fidèle à l'ADN sportif de Porsche : ligne basse, garde au sol réduite, comportement routier proche de la berline Taycan. C'est le choix naturel pour qui recherche avant tout la dynamique de conduite, avec l'avantage pratique d'un coffre plus généreux qu'une berline classique.</p>
+  <p>Le <strong>Cross Turismo</strong> adopte une posture surélevée, avec une garde au sol augmentée, des protections de bas de caisse spécifiques et une allure crossover plus affirmée. Il conserve les performances électriques du Taycan tout en gagnant en polyvalence sur route dégradée ou enneigée.</p>
+
+  <h2>Comparatif technique</h2>
+  <table>
+    <tr><th>Critère</th><th>Sport Turismo</th><th>Cross Turismo</th></tr>
+    <tr><td>Garde au sol</td><td>Standard</td><td>Rehaussée</td></tr>
+    <tr><td>Position de conduite</td><td>Sportive, basse</td><td>Légèrement surélevée</td></tr>
+    <tr><td>Usage privilégié</td><td>Route, dynamisme</td><td>Polyvalence, tout-chemin léger</td></tr>
+    <tr><td>Volume de coffre</td><td>Comparable</td><td>Comparable, accès facilité</td></tr>
+    <tr><td>Poids</td><td>Légèrement inférieur</td><td>Légèrement supérieur (protections, suspension)</td></tr>
+  </table>
+  <p>Sur le plan de l'autonomie et de la consommation, l'écart entre les deux carrosseries reste marginal : c'est surtout le niveau de motorisation choisi (base, 4S, Turbo) qui influence significativement ces chiffres, bien plus que le choix Sport Turismo ou Cross Turismo.</p>
+
+  <h2>Quel modèle pour quel profil d'acheteur ?</h2>
+  <h3>Le Sport Turismo convient si :</h3>
+  <ul>
+    <li>Vous roulez majoritairement sur autoroute et route bien entretenue</li>
+    <li>La dynamique de conduite reste votre priorité, même dans un break</li>
+    <li>Vous privilégiez une ligne plus proche de la berline Taycan</li>
+  </ul>
+  <h3>Le Cross Turismo convient si :</h3>
+  <ul>
+    <li>Vous circulez régulièrement sur des routes dégradées, en montagne ou sous la neige</li>
+    <li>Vous appréciez une position de conduite légèrement plus haute, sans basculer vers un SUV</li>
+    <li>Vous recherchez un usage polyvalent au quotidien, y compris hors des grands axes</li>
+  </ul>
+
+  <h2>Et à la revente ?</h2>
+  <p>C'est un point que nous analysons systématiquement avec nos clients avant l'acquisition, car il conditionne la rentabilité de l'opération sur le moyen terme. Le marché de l'occasion pour les deux carrosseries reste globalement actif en Europe, avec une légère préférence de la demande pour les configurations offrant la transmission intégrale, quelle que soit la carrosserie retenue. La dépréciation observée sur les deux modèles suit des courbes très proches sur les deux premières années ; la différence se joue davantage sur le niveau de motorisation et sur l'état ou le kilométrage du véhicule que sur le choix de la carrosserie en tant que tel.</p>
+
+  <h2>Notre recommandation</h2>
+  <p>Il n'y a pas de mauvais choix entre ces deux carrosseries — la décision dépend avant tout de votre usage réel. Un rouleur d'autoroute et de ville privilégiera le Sport Turismo pour son comportement plus affûté ; un utilisateur régulier de routes de montagne ou de campagne appréciera la polyvalence supplémentaire du Cross Turismo.</p>
+  <p>Dans le cadre de nos mandats de recherche, nous accompagnons chaque client dans cette réflexion en fonction de son usage quotidien, avant même de lancer le sourcing sur le marché européen.</p>
+
+
+  <div class="article-cta">
+    <h3 style="color:var(--white); margin-bottom:14px;">Vous souhaitez un accompagnement personnalisé sur ce sujet ?</h3>
+    <p>Contactez notre cabinet pour un entretien de recherche privé.</p>
+    <a href="confier-ma-recherche.html" class="btn btn--blue btn--lg">Demander un entretien privé</a>
+  </div>
+</article>
+
+
+<footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__inner">
+
+        <div class="footer__brand">
+          <h3>Electric Premium Cars</h3>
+          <span class="footer__brand-sub">Cabinet de courtage</span>
+          <p>Spécialiste de l'acquisition de véhicules électriques premium en Europe. Recherche, sélection, négociation et accompagnement sur mesure.</p>
+        </div>
+
+        <div class="footer__col">
+          <h4>Navigation</h4>
+          <a href="index.html">Accueil</a>
+          <a href="#methode">Notre méthode</a>
+          <a href="vehicules-demandes.html">Véhicules demandés</a>
+          <a href="faq.html">FAQ</a>
+          <a href="guides.html">Guides</a>
+          <a href="confier-ma-recherche.html">Confier ma recherche</a>
+        </div>
+
+        <div class="footer__col">
+          <h4>Notre métier</h4>
+          <a href="#methode">Recherche européenne</a>
+          <a href="#methode">Sélection & expertise</a>
+          <a href="#methode">Négociation</a>
+          <a href="#methode">Acquisition sécurisée</a>
+        </div>
+
+        <div class="footer__col">
+          <h4>Contact</h4>
+          <a href="mailto:projet@electricpremiumcar.com">projet@electricpremiumcar.com</a>
+          <a href="tel:+33668696918">06 68 69 69 18</a>
+          <p>58 rue Monceau, Paris 75008</p>
+          <p>Réponse sous 24 heures ouvrées</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>© 2026 Electric Premium Cars — Tous droits réservés</p>
+      <div class="footer__bottom-links">
+        <a href="#">Mentions légales</a>
+        <a href="#">Politique de confidentialité</a>
+        <a href="#">CGV</a>
+      </div>
+    </div>
+  </footer>
+
+
+<script>
+  const nav = document.querySelector('.nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('nav--scrolled', window.scrollY > 40);
+  });
+
+  const burger = document.getElementById('navBurger');
+  const mobileMenu = document.getElementById('navMobile');
+  burger.addEventListener('click', () => {
+    burger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+</script>
+
+</body>
+</html>

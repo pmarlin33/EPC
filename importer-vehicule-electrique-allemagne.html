@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Importer un véhicule électrique premium depuis l'Allemagne — Electric Premium Cars</title>
+<meta name="description" content="Guide complet 2026 pour importer un véhicule électrique premium depuis l'Allemagne : sourcing, inspection, transport, immatriculation.">
+<link rel="stylesheet" href="style.css">
+<style>
+  /* ─── ARTICLE — composants spécifiques, construits avec les tokens existants ─── */
+
+  .article-back {
+    padding-top: calc(var(--nav-h) + 48px);
+  }
+
+  .article-back__inner {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  .article-back a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-head);
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--grey-text);
+    transition: color 0.2s var(--ease);
+  }
+
+  .article-back a:hover { color: var(--blue-elec); }
+
+  .article-hero {
+    padding: 32px 0 56px;
+  }
+
+  .article-hero__inner {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  .article-hero h1 {
+    font-size: clamp(2rem, 4vw, 2.9rem);
+    margin: 18px 0 20px;
+  }
+
+  .article-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    color: var(--grey-text);
+    letter-spacing: 0.02em;
+  }
+
+  .article-meta__dot {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: var(--grey-mid);
+  }
+
+  .article-body {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 40px 100px;
+  }
+
+  .article-body p {
+    color: #3f3f3d;
+    font-size: 1.02rem;
+    line-height: 1.85;
+    margin-bottom: 26px;
+  }
+
+  .article-body h2 {
+    font-size: 1.55rem;
+    margin: 56px 0 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--grey-light);
+  }
+
+  .article-body h3 {
+    font-size: 1.1rem;
+    margin: 36px 0 14px;
+  }
+
+  .article-body ul, .article-body ol {
+    margin: 0 0 26px;
+    padding-left: 22px;
+  }
+
+  .article-body ul { list-style: disc; }
+  .article-body ol { list-style: decimal; }
+
+  .article-body li {
+    color: #3f3f3d;
+    font-size: 1.02rem;
+    line-height: 1.8;
+    margin-bottom: 10px;
+  }
+
+  .article-body strong {
+    color: var(--anthracite);
+    font-weight: 600;
+  }
+
+  .article-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 8px 0 32px;
+    font-size: 0.9rem;
+  }
+
+  .article-body th {
+    text-align: left;
+    font-family: var(--font-head);
+    font-weight: 600;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--grey-text);
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--grey-mid);
+  }
+
+  .article-body td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--grey-light);
+    color: var(--anthracite);
+  }
+
+  .article-body em {
+    color: var(--grey-text);
+    font-style: normal;
+    font-size: 0.9rem;
+  }
+
+  .article-cta {
+    background: var(--anthracite);
+    border-radius: var(--radius-lg);
+    padding: 48px 44px;
+    margin-top: 24px;
+    text-align: center;
+  }
+
+  .article-cta p {
+    color: rgba(255,255,255,0.6);
+    font-size: 1rem;
+    margin-bottom: 24px;
+  }
+
+  @media (max-width: 640px) {
+    .article-back__inner, .article-hero__inner, .article-body { padding-left: 24px; padding-right: 24px; }
+    .article-cta { padding: 36px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav" role="navigation" aria-label="Navigation principale">
+    <div class="nav__inner">
+
+
+      <ul class="nav__links" role="list">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="#methode">Notre méthode</a></li>
+        <li><a href="vehicules-demandes.html">Véhicules demandés</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="guides.html" class="active" aria-current="page">Guides</a></li>
+        <li><a href="confier-ma-recherche.html">Confier ma recherche</a></li>
+      </ul>
+
+
+
+      <button class="nav__burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="nav__mobile" id="mobileMenu" aria-hidden="true">
+      <a href="index.html">Accueil</a>
+      <a href="#methode">Notre méthode</a>
+      <a href="vehicules-demandes.html">Véhicules demandés</a>
+      <a href="faq.html">FAQ</a>
+      <a href="guides.html">Guides</a>
+      <a href="confier-ma-recherche.html">Confier ma recherche</a>
+      <a href="confier-ma-recherche.html" class="btn btn--primary" style="margin-top:8px; text-align:center;">Confier ma recherche</a>
+    </div>
+  </nav>
+
+<div class="nav__mobile" id="mobileMenu" aria-hidden="true">
+      <a href="index.html">Accueil</a>
+      <a href="#methode">Notre méthode</a>
+      <a href="vehicules-demandes.html">Véhicules demandés</a>
+      <a href="faq.html">FAQ</a>
+      <a href="guides.html">Guides</a>
+      <a href="confier-ma-recherche.html">Confier ma recherche</a>
+      <a href="confier-ma-recherche.html" class="btn btn--primary" style="margin-top:8px; text-align:center;">Confier ma recherche</a>
+    </div>
+
+
+<div class="article-back">
+  <div class="article-back__inner">
+    <a href="guides.html"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg> Tous les guides</a>
+  </div>
+</div>
+
+<section class="article-hero">
+  <div class="article-hero__inner">
+    <span class="label">Import & démarches</span>
+    <h1>Importer un véhicule électrique premium depuis l'Allemagne : le guide complet 2026</h1>
+    <div class="article-meta">
+      <span>Electric Premium Cars</span>
+      <span class="article-meta__dot"></span>
+      <span>8 min de lecture</span>
+    </div>
+  </div>
+</section>
+
+<article class="article-body">
+
+  <p>L'Allemagne reste le premier marché automobile d'Europe, avec un parc d'occasion premium trois à quatre fois plus fourni qu'en France, notamment sur les véhicules électriques haut de gamme. Que vous visiez une Porsche Taycan, une Mercedes EQS, un BMW iX ou un Porsche Macan Électrique, le principe reste le même : un potentiel d'économie réel, à condition de maîtriser un processus administratif spécifique. Voici comment ça fonctionne, étape par étape.</p>
+
+  <h2>Pourquoi l'Allemagne pour un véhicule électrique premium ?</h2>
+  <p>Le marché allemand combine plusieurs avantages structurels pour l'acheteur français : un volume de véhicules disponibles nettement supérieur, une proportion importante de véhicules issus de leasing professionnel (donc à l'entretien rigoureux et à l'historique transparent), et des prix souvent plus compétitifs qu'en France sur des configurations identiques. Sur les modèles premium électriques, l'économie réalisable peut atteindre jusqu'à 30 %, écotaxe et frais annexes déduits.</p>
+
+  <h2>Les 5 étapes clés de l'importation</h2>
+  <h3>1. Sourcing et sélection du véhicule</h3>
+  <p>Identifier une annonce, c'est la partie visible. La partie qui compte vraiment : vérifier que le véhicule dispose de son certificat de conformité européen (COC) d'origine — un document indispensable pour l'immatriculation française. Sans lui, il faut en recommander un auprès du constructeur, ce qui engendre délais et frais supplémentaires. Le numéro de série (VIN) doit également être strictement identique sur la carte grise allemande, le châssis et les documents constructeur : toute incohérence est un signal d'alerte à prendre au sérieux.</p>
+  <h3>2. Inspection avant achat</h3>
+  <p>Sur un véhicule électrique, cette étape ne se limite pas à l'état mécanique et esthétique classique. Il faut impérativement vérifier l'état de santé de la batterie (le SOH), l'existence d'une garantie batterie constructeur transférable, et l'historique de charge du véhicule. Un déplacement personnel ou une inspection indépendante réalisée sur place reste la meilleure protection contre les mauvaises surprises et donne aussi des arguments solides pour la négociation du prix.</p>
+  <h3>3. Négociation et transport</h3>
+  <p>En Allemagne, les annonces peuvent être affichées TTC, HT ou en régime de TVA sur marge — une distinction qui a un impact direct sur le montant réellement dû. Une fois l'accord trouvé, deux options s'offrent à vous pour le rapatriement : aller chercher le véhicule vous-même avec des plaques provisoires d'export (<em>Ausfuhrkennzeichen</em>), ou faire appel à un transporteur professionnel qui livre directement le véhicule sur camion.</p>
+  <h3>4. Formalités françaises</h3>
+  <p>Une fois le véhicule sur le territoire français, plusieurs documents sont nécessaires pour l'immatriculation définitive : le certificat de conformité européen (COC), le quitus fiscal, un contrôle technique français si le véhicule a plus de quatre ans, et le dossier complet déposé via l'ANTS. La loi impose un délai maximum d'un mois après l'arrivée du véhicule pour finaliser cette ré-immatriculation. En attendant, un certificat provisoire d'immatriculation (CPI) en plaques WW permet de circuler légalement.</p>
+  <h3>5. Malus écologique : une vigilance obligatoire</h3>
+  <p>Contrairement à une idée reçue, le malus écologique français s'applique à tout véhicule importé, y compris électrique, en fonction de son taux d'émission et de son année de première immatriculation — avec une décote appliquée par année entamée. Pour un véhicule 100 % électrique, ce point reste généralement favorable, mais il doit systématiquement être anticipé dans le calcul du coût total de l'opération, au même titre que les frais de transport et d'intermédiaire.</p>
+
+  <h2>Les pièges les plus fréquents</h2>
+  <ul>
+    <li><strong>Kilométrage trafiqué ou documents non conformes</strong> : le marché allemand, aussi profond soit-il, n'est pas exempt de tentatives de fraude. La vérification de l'historique et du VIN reste la meilleure parade.</li>
+    <li><strong>Modèles "spécifiques marché allemand"</strong> : certaines configurations d'origine ne trouvent pas toujours preneur de la même façon en France à la revente, ce qui peut affecter la cote Argus. Un point à anticiper si la revente à moyen terme fait partie de votre stratégie.</li>
+    <li><strong>Sous-estimer les délais</strong> : entre la signature et la réception de la carte grise française, comptez généralement 2 à 4 semaines, transport et démarches administratives inclus.</li>
+  </ul>
+
+  <h2>Pourquoi passer par un mandataire spécialisé</h2>
+  <p>Le processus n'a rien d'impossible à mener seul, mais il demande du temps, une bonne connaissance du marché allemand, et une vigilance technique particulière sur les véhicules électriques (SOH, garantie batterie, cohérence documentaire). Un mandataire spécialisé structure l'ensemble du parcours — sourcing ciblé, inspection indépendante, transport, formalités françaises — dans le cadre d'un mandat écrit avec des honoraires fixés en amont, ce qui sécurise l'opération de bout en bout pour l'acheteur.</p>
+
+
+  <div class="article-cta">
+    <h3 style="color:var(--white); margin-bottom:14px;">Vous souhaitez un accompagnement personnalisé sur ce sujet ?</h3>
+    <p>Contactez notre cabinet pour un entretien de recherche privé.</p>
+    <a href="confier-ma-recherche.html" class="btn btn--blue btn--lg">Demander un entretien privé</a>
+  </div>
+</article>
+
+
+<footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__inner">
+
+        <div class="footer__brand">
+          <h3>Electric Premium Cars</h3>
+          <span class="footer__brand-sub">Cabinet de courtage</span>
+          <p>Spécialiste de l'acquisition de véhicules électriques premium en Europe. Recherche, sélection, négociation et accompagnement sur mesure.</p>
+        </div>
+
+        <div class="footer__col">
+          <h4>Navigation</h4>
+          <a href="index.html">Accueil</a>
+          <a href="#methode">Notre méthode</a>
+          <a href="vehicules-demandes.html">Véhicules demandés</a>
+          <a href="faq.html">FAQ</a>
+          <a href="guides.html">Guides</a>
+          <a href="confier-ma-recherche.html">Confier ma recherche</a>
+        </div>
+
+        <div class="footer__col">
+          <h4>Notre métier</h4>
+          <a href="#methode">Recherche européenne</a>
+          <a href="#methode">Sélection & expertise</a>
+          <a href="#methode">Négociation</a>
+          <a href="#methode">Acquisition sécurisée</a>
+        </div>
+
+        <div class="footer__col">
+          <h4>Contact</h4>
+          <a href="mailto:projet@electricpremiumcar.com">projet@electricpremiumcar.com</a>
+          <a href="tel:+33668696918">06 68 69 69 18</a>
+          <p>58 rue Monceau, Paris 75008</p>
+          <p>Réponse sous 24 heures ouvrées</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>© 2026 Electric Premium Cars — Tous droits réservés</p>
+      <div class="footer__bottom-links">
+        <a href="#">Mentions légales</a>
+        <a href="#">Politique de confidentialité</a>
+        <a href="#">CGV</a>
+      </div>
+    </div>
+  </footer>
+
+
+<script>
+  const nav = document.querySelector('.nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('nav--scrolled', window.scrollY > 40);
+  });
+
+  const burger = document.getElementById('navBurger');
+  const mobileMenu = document.getElementById('navMobile');
+  burger.addEventListener('click', () => {
+    burger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+</script>
+
+</body>
+</html>

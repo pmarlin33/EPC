@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Courtier automobile vs achat direct concessionnaire — Electric Premium Cars</title>
+<meta name="description" content="Concession ou courtier automobile : quelles différences pour l'achat d'un véhicule électrique premium, et lequel choisir.">
+<link rel="stylesheet" href="style.css">
+<style>
+  /* ─── ARTICLE — composants spécifiques, construits avec les tokens existants ─── */
+
+  .article-back {
+    padding-top: calc(var(--nav-h) + 48px);
+  }
+
+  .article-back__inner {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  .article-back a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-head);
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--grey-text);
+    transition: color 0.2s var(--ease);
+  }
+
+  .article-back a:hover { color: var(--blue-elec); }
+
+  .article-hero {
+    padding: 32px 0 56px;
+  }
+
+  .article-hero__inner {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  .article-hero h1 {
+    font-size: clamp(2rem, 4vw, 2.9rem);
+    margin: 18px 0 20px;
+  }
+
+  .article-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    color: var(--grey-text);
+    letter-spacing: 0.02em;
+  }
+
+  .article-meta__dot {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: var(--grey-mid);
+  }
+
+  .article-body {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 40px 100px;
+  }
+
+  .article-body p {
+    color: #3f3f3d;
+    font-size: 1.02rem;
+    line-height: 1.85;
+    margin-bottom: 26px;
+  }
+
+  .article-body h2 {
+    font-size: 1.55rem;
+    margin: 56px 0 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--grey-light);
+  }
+
+  .article-body h3 {
+    font-size: 1.1rem;
+    margin: 36px 0 14px;
+  }
+
+  .article-body ul, .article-body ol {
+    margin: 0 0 26px;
+    padding-left: 22px;
+  }
+
+  .article-body ul { list-style: disc; }
+  .article-body ol { list-style: decimal; }
+
+  .article-body li {
+    color: #3f3f3d;
+    font-size: 1.02rem;
+    line-height: 1.8;
+    margin-bottom: 10px;
+  }
+
+  .article-body strong {
+    color: var(--anthracite);
+    font-weight: 600;
+  }
+
+  .article-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 8px 0 32px;
+    font-size: 0.9rem;
+  }
+
+  .article-body th {
+    text-align: left;
+    font-family: var(--font-head);
+    font-weight: 600;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--grey-text);
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--grey-mid);
+  }
+
+  .article-body td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--grey-light);
+    color: var(--anthracite);
+  }
+
+  .article-body em {
+    color: var(--grey-text);
+    font-style: normal;
+    font-size: 0.9rem;
+  }
+
+  .article-cta {
+    background: var(--anthracite);
+    border-radius: var(--radius-lg);
+    padding: 48px 44px;
+    margin-top: 24px;
+    text-align: center;
+  }
+
+  .article-cta p {
+    color: rgba(255,255,255,0.6);
+    font-size: 1rem;
+    margin-bottom: 24px;
+  }
+
+  @media (max-width: 640px) {
+    .article-back__inner, .article-hero__inner, .article-body { padding-left: 24px; padding-right: 24px; }
+    .article-cta { padding: 36px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav" role="navigation" aria-label="Navigation principale">
+    <div class="nav__inner">
+
+
+      <ul class="nav__links" role="list">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="#methode">Notre méthode</a></li>
+        <li><a href="vehicules-demandes.html">Véhicules demandés</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="guides.html" class="active" aria-current="page">Guides</a></li>
+        <li><a href="confier-ma-recherche.html">Confier ma recherche</a></li>
+      </ul>
+
+
+
+      <button class="nav__burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="nav__mobile" id="mobileMenu" aria-hidden="true">
+      <a href="index.html">Accueil</a>
+      <a href="#methode">Notre méthode</a>
+      <a href="vehicules-demandes.html">Véhicules demandés</a>
+      <a href="faq.html">FAQ</a>
+      <a href="guides.html">Guides</a>
+      <a href="confier-ma-recherche.html">Confier ma recherche</a>
+      <a href="confier-ma-recherche.html" class="btn btn--primary" style="margin-top:8px; text-align:center;">Confier ma recherche</a>
+    </div>
+  </nav>
+
+<div class="nav__mobile" id="mobileMenu" aria-hidden="true">
+      <a href="index.html">Accueil</a>
+      <a href="#methode">Notre méthode</a>
+      <a href="vehicules-demandes.html">Véhicules demandés</a>
+      <a href="faq.html">FAQ</a>
+      <a href="guides.html">Guides</a>
+      <a href="confier-ma-recherche.html">Confier ma recherche</a>
+      <a href="confier-ma-recherche.html" class="btn btn--primary" style="margin-top:8px; text-align:center;">Confier ma recherche</a>
+    </div>
+
+
+<div class="article-back">
+  <div class="article-back__inner">
+    <a href="guides.html"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg> Tous les guides</a>
+  </div>
+</div>
+
+<section class="article-hero">
+  <div class="article-hero__inner">
+    <span class="label">Notre approche</span>
+    <h1>Courtier automobile vs achat direct concessionnaire : que choisir pour un véhicule premium ?</h1>
+    <div class="article-meta">
+      <span>Electric Premium Cars</span>
+      <span class="article-meta__dot"></span>
+      <span>6 min de lecture</span>
+    </div>
+  </div>
+</section>
+
+<article class="article-body">
+
+  <p>Pour l'achat d'un véhicule électrique premium, deux circuits s'offrent à vous : la concession de marque, ou le courtier indépendant. Les deux mènent au même véhicule, mais pas par le même chemin, ni avec le même niveau d'accompagnement. Voici les différences concrètes, pour choisir en connaissance de cause.</p>
+
+  <h2>Deux logiques différentes</h2>
+  <p>Le <strong>concessionnaire</strong> est le distributeur officiel d'une marque : il vend le catalogue de son constructeur, aux conditions commerciales fixées par ce dernier, généralement à partir de son stock physique ou sur commande usine. C'est une solution rassurante — showroom, essai du véhicule, SAV intégré — mais avec une marge de négociation limitée par les quotas et la politique tarifaire du siège.</p>
+  <p>Le <strong>courtier automobile</strong> fonctionne différemment : il travaille pour le compte de l'acheteur, pas pour celui d'une marque. Il ne détient aucun stock, n'est affilié à aucun constructeur, et sa mission consiste à sourcer le véhicule exact correspondant à un cahier des charges précis — motorisation, kilométrage, options, budget — sur l'ensemble du marché européen, en France comme à l'étranger.</p>
+
+  <h2>Le point de bascule : le cahier des charges</h2>
+  <p>C'est la vraie différence de fond entre les deux approches. En concession, vous choisissez parmi ce qui existe dans le réseau de la marque, en France. Avec un courtier, c'est l'inverse : vous définissez précisément ce que vous cherchez, et le professionnel se met en recherche active sur un marché beaucoup plus large — y compris à l'étranger, où l'offre est souvent plus dense et les prix plus compétitifs sur les configurations premium.</p>
+  <p>Sur un véhicule électrique haut de gamme, où les configurations d'usine créent une infinité de combinaisons possibles, cette approche sur-mesure change concrètement les chances de trouver exactement le véhicule recherché, plutôt que de composer avec ce qui est disponible localement.</p>
+
+  <h2>Ce que chaque circuit apporte réellement</h2>
+  <h3>La concession reste pertinente si :</h3>
+  <ul>
+    <li>Vous voulez voir et essayer le véhicule avant de vous engager</li>
+    <li>Vous n'avez pas de contrainte de configuration précise et acceptez le stock disponible</li>
+    <li>Vous privilégiez un SAV intégré dans le même réseau que l'achat</li>
+  </ul>
+  <h3>Le courtier prend l'avantage si :</h3>
+  <ul>
+    <li>Vous recherchez une configuration précise, difficile à trouver en stock local</li>
+    <li>Le budget engagé justifie un travail de sourcing plus poussé (le segment premium, typiquement)</li>
+    <li>Vous voulez déléguer entièrement la vérification technique et les démarches d'import le cas échéant</li>
+    <li>La discrétion de la transaction compte pour vous</li>
+  </ul>
+
+  <h2>Sur la question du prix</h2>
+  <p>Contrairement à une idée reçue, le passage par un courtier n'ajoute pas nécessairement un surcoût par rapport à un achat direct. En sourçant sur un marché plus large, y compris à l'étranger, le courtier accède souvent à des prix de base plus compétitifs qu'en concession française, avant même de facturer ses honoraires. Sur des véhicules premium à six chiffres, l'écart de prix négocié peut largement compenser, voire dépasser, le coût du service.</p>
+  <p><strong>Sur la rémunération</strong>, une différence structurelle mérite d'être connue : un courtier facture des honoraires fixes pour son travail de recherche, définis avant le démarrage de la mission, indépendamment du prix final du véhicule. Cette indépendance de rémunération garantit que l'intérêt du courtier reste aligné sur celui de l'acheteur — contrairement à un intermédiaire rémunéré à la commission sur la vente, dont l'intérêt peut diverger de celui du client sur la négociation finale.</p>
+
+  <h2>Et sur la garantie constructeur ?</h2>
+  <p>Point de réassurance important : que le véhicule soit acheté en concession française ou sourcé via un courtier sur le marché européen, la garantie constructeur contractuelle reste identique et applicable dans l'ensemble du réseau de la marque en France, dès lors que le véhicule provient d'un réseau de concessions officielles. Ce n'est donc pas un facteur qui doit faire pencher la balance d'un côté ou de l'autre.</p>
+
+  <h2>En résumé</h2>
+  <p>L'achat direct en concession convient à qui privilégie la simplicité, le contact physique avec le véhicule, et n'a pas d'exigence particulière sur la configuration. Le recours à un courtier prend tout son sens dès lors que le cahier des charges est précis, que le budget est conséquent, et que la valeur ajoutée attendue dépasse la simple mise en relation : sourcing élargi au marché européen, vérification technique indépendante, gestion des formalités, et alignement d'intérêt garanti par des honoraires fixes plutôt qu'une commission sur la vente.</p>
+
+
+  <div class="article-cta">
+    <h3 style="color:var(--white); margin-bottom:14px;">Vous souhaitez un accompagnement personnalisé sur ce sujet ?</h3>
+    <p>Contactez notre cabinet pour un entretien de recherche privé.</p>
+    <a href="confier-ma-recherche.html" class="btn btn--blue btn--lg">Demander un entretien privé</a>
+  </div>
+</article>
+
+
+<footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__inner">
+
+        <div class="footer__brand">
+          <h3>Electric Premium Cars</h3>
+          <span class="footer__brand-sub">Cabinet de courtage</span>
+          <p>Spécialiste de l'acquisition de véhicules électriques premium en Europe. Recherche, sélection, négociation et accompagnement sur mesure.</p>
+        </div>
+
+        <div class="footer__col">
+          <h4>Navigation</h4>
+          <a href="index.html">Accueil</a>
+          <a href="#methode">Notre méthode</a>
+          <a href="vehicules-demandes.html">Véhicules demandés</a>
+          <a href="faq.html">FAQ</a>
+          <a href="guides.html">Guides</a>
+          <a href="confier-ma-recherche.html">Confier ma recherche</a>
+        </div>
+
+        <div class="footer__col">
+          <h4>Notre métier</h4>
+          <a href="#methode">Recherche européenne</a>
+          <a href="#methode">Sélection & expertise</a>
+          <a href="#methode">Négociation</a>
+          <a href="#methode">Acquisition sécurisée</a>
+        </div>
+
+        <div class="footer__col">
+          <h4>Contact</h4>
+          <a href="mailto:projet@electricpremiumcar.com">projet@electricpremiumcar.com</a>
+          <a href="tel:+33668696918">06 68 69 69 18</a>
+          <p>58 rue Monceau, Paris 75008</p>
+          <p>Réponse sous 24 heures ouvrées</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>© 2026 Electric Premium Cars — Tous droits réservés</p>
+      <div class="footer__bottom-links">
+        <a href="#">Mentions légales</a>
+        <a href="#">Politique de confidentialité</a>
+        <a href="#">CGV</a>
+      </div>
+    </div>
+  </footer>
+
+
+<script>
+  const nav = document.querySelector('.nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('nav--scrolled', window.scrollY > 40);
+  });
+
+  const burger = document.getElementById('navBurger');
+  const mobileMenu = document.getElementById('navMobile');
+  burger.addEventListener('click', () => {
+    burger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+</script>
+
+</body>
+</html>

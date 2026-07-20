@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SOH batterie : comment vérifier l'état de santé avant d'acheter — Electric Premium Cars</title>
+<meta name="description" content="Comprendre le SOH d'une batterie de véhicule électrique, comment l'obtenir et pourquoi il conditionne votre achat d'occasion.">
+<link rel="stylesheet" href="style.css">
+<style>
+  /* ─── ARTICLE — composants spécifiques, construits avec les tokens existants ─── */
+
+  .article-back {
+    padding-top: calc(var(--nav-h) + 48px);
+  }
+
+  .article-back__inner {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  .article-back a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-head);
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--grey-text);
+    transition: color 0.2s var(--ease);
+  }
+
+  .article-back a:hover { color: var(--blue-elec); }
+
+  .article-hero {
+    padding: 32px 0 56px;
+  }
+
+  .article-hero__inner {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  .article-hero h1 {
+    font-size: clamp(2rem, 4vw, 2.9rem);
+    margin: 18px 0 20px;
+  }
+
+  .article-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    color: var(--grey-text);
+    letter-spacing: 0.02em;
+  }
+
+  .article-meta__dot {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: var(--grey-mid);
+  }
+
+  .article-body {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 40px 100px;
+  }
+
+  .article-body p {
+    color: #3f3f3d;
+    font-size: 1.02rem;
+    line-height: 1.85;
+    margin-bottom: 26px;
+  }
+
+  .article-body h2 {
+    font-size: 1.55rem;
+    margin: 56px 0 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--grey-light);
+  }
+
+  .article-body h3 {
+    font-size: 1.1rem;
+    margin: 36px 0 14px;
+  }
+
+  .article-body ul, .article-body ol {
+    margin: 0 0 26px;
+    padding-left: 22px;
+  }
+
+  .article-body ul { list-style: disc; }
+  .article-body ol { list-style: decimal; }
+
+  .article-body li {
+    color: #3f3f3d;
+    font-size: 1.02rem;
+    line-height: 1.8;
+    margin-bottom: 10px;
+  }
+
+  .article-body strong {
+    color: var(--anthracite);
+    font-weight: 600;
+  }
+
+  .article-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 8px 0 32px;
+    font-size: 0.9rem;
+  }
+
+  .article-body th {
+    text-align: left;
+    font-family: var(--font-head);
+    font-weight: 600;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--grey-text);
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--grey-mid);
+  }
+
+  .article-body td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--grey-light);
+    color: var(--anthracite);
+  }
+
+  .article-body em {
+    color: var(--grey-text);
+    font-style: normal;
+    font-size: 0.9rem;
+  }
+
+  .article-cta {
+    background: var(--anthracite);
+    border-radius: var(--radius-lg);
+    padding: 48px 44px;
+    margin-top: 24px;
+    text-align: center;
+  }
+
+  .article-cta p {
+    color: rgba(255,255,255,0.6);
+    font-size: 1rem;
+    margin-bottom: 24px;
+  }
+
+  @media (max-width: 640px) {
+    .article-back__inner, .article-hero__inner, .article-body { padding-left: 24px; padding-right: 24px; }
+    .article-cta { padding: 36px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav" role="navigation" aria-label="Navigation principale">
+    <div class="nav__inner">
+
+
+      <ul class="nav__links" role="list">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="#methode">Notre méthode</a></li>
+        <li><a href="vehicules-demandes.html">Véhicules demandés</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="guides.html" class="active" aria-current="page">Guides</a></li>
+        <li><a href="confier-ma-recherche.html">Confier ma recherche</a></li>
+      </ul>
+
+
+
+      <button class="nav__burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="nav__mobile" id="mobileMenu" aria-hidden="true">
+      <a href="index.html">Accueil</a>
+      <a href="#methode">Notre méthode</a>
+      <a href="vehicules-demandes.html">Véhicules demandés</a>
+      <a href="faq.html">FAQ</a>
+      <a href="guides.html">Guides</a>
+      <a href="confier-ma-recherche.html">Confier ma recherche</a>
+      <a href="confier-ma-recherche.html" class="btn btn--primary" style="margin-top:8px; text-align:center;">Confier ma recherche</a>
+    </div>
+  </nav>
+
+<div class="nav__mobile" id="mobileMenu" aria-hidden="true">
+      <a href="index.html">Accueil</a>
+      <a href="#methode">Notre méthode</a>
+      <a href="vehicules-demandes.html">Véhicules demandés</a>
+      <a href="faq.html">FAQ</a>
+      <a href="guides.html">Guides</a>
+      <a href="confier-ma-recherche.html">Confier ma recherche</a>
+      <a href="confier-ma-recherche.html" class="btn btn--primary" style="margin-top:8px; text-align:center;">Confier ma recherche</a>
+    </div>
+
+
+<div class="article-back">
+  <div class="article-back__inner">
+    <a href="guides.html"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg> Tous les guides</a>
+  </div>
+</div>
+
+<section class="article-hero">
+  <div class="article-hero__inner">
+    <span class="label">Expertise technique</span>
+    <h1>SOH batterie : comment vérifier l'état de santé d'une batterie avant d'acheter</h1>
+    <div class="article-meta">
+      <span>Electric Premium Cars</span>
+      <span class="article-meta__dot"></span>
+      <span>6 min de lecture</span>
+    </div>
+  </div>
+</section>
+
+<article class="article-body">
+
+  <p>Avant d'acheter un véhicule électrique d'occasion, un seul chiffre résume l'essentiel de ce que vous devez savoir sur sa batterie : le SOH. Autonomie réelle, coût d'entretien à venir, valeur de revente future — tout en dépend. Voici comment le comprendre, comment l'obtenir, et pourquoi il doit conditionner votre décision d'achat.</p>
+
+  <h2>Qu'est-ce que le SOH ?</h2>
+  <p>Le SOH, pour <em>State of Health</em> (état de santé), mesure en pourcentage la capacité réelle d'une batterie par rapport à sa capacité d'origine, à sa sortie d'usine. Une batterie neuve affiche 100 % ; ce chiffre diminue inévitablement avec le temps et les cycles de charge, à un rythme qui dépend fortement des conditions d'usage.</p>
+  <p>Concrètement : un véhicule dont la batterie affichait 100 kWh à la sortie d'usine, et qui présente aujourd'hui un SOH de 88 %, ne dispose plus que d'environ 88 kWh de capacité réellement exploitable. L'autonomie affichée diminue dans une proportion comparable.</p>
+  <p><strong>À ne pas confondre avec le SOC</strong> (<em>State of Charge</em>), qui indique simplement le niveau de charge actuel de la batterie — l'équivalent de la jauge d'essence — et n'a rien à voir avec son état de santé à long terme.</p>
+
+  <h2>Comment obtenir le SOH d'un véhicule</h2>
+  <p>Trois méthodes principales existent, selon le constructeur et le niveau de garantie souhaité.</p>
+  <h3>1. Via l'interface constructeur</h3>
+  <p>Certaines marques donnent accès à une estimation du SOH directement depuis l'écran du véhicule, l'application mobile associée, ou via un certificat batterie payant délivré par le constructeur. Le niveau de précision et de fiabilité varie sensiblement d'une marque à l'autre.</p>
+  <h3>2. En atelier agréé</h3>
+  <p>Un diagnostic réalisé par le réseau du constructeur permet d'obtenir une lecture directe des données du BMS (Battery Management System), le système qui surveille en continu l'état de la batterie. C'est la méthode la plus fiable pour les marques qui ne communiquent pas ce chiffre facilement au grand public.</p>
+  <h3>3. Via un outil de diagnostic OBD indépendant</h3>
+  <p>Un boîtier connecté à la prise OBD du véhicule permet de lire les données du BMS sans dépendre de la coopération du vendeur ni du réseau constructeur. Cette méthode produit un rapport objectif et difficilement manipulable, ce qui en fait la référence dans le cadre d'une transaction entre particuliers ou via un intermédiaire.</p>
+
+  <h2>Ce qu'il faut exiger avant d'acheter</h2>
+  <p>Un SOH annoncé oralement par un vendeur ne vaut rien sans preuve documentée. Avant toute décision, trois éléments doivent être réunis :</p>
+  <ul>
+    <li><strong>Un rapport de diagnostic daté et indépendant</strong>, réalisé de préférence dans les semaines précédant la transaction — un SOH mesuré un an plus tôt n'a plus de valeur probante.</li>
+    <li><strong>L'historique de charge du véhicule</strong> : nombre de cycles, fréquence de recharge rapide (DC), conditions de stockage. Des charges rapides répétées et un stockage prolongé à charge maximale accélèrent sensiblement le vieillissement de la batterie.</li>
+    <li><strong>Un examen visuel complémentaire</strong> lorsque c'est possible : recherche de gonflement, de traces de corrosion ou de réparation sur les modules, qui peuvent signaler un incident antérieur non déclaré.</li>
+  </ul>
+  <p>Un point de vigilance technique : la température au moment de la mesure peut fausser temporairement le résultat. Une batterie testée par temps très froid peut afficher un SOH ponctuellement plus faible que sa valeur réelle en conditions normales — un bon rapport d'expertise en tient compte.</p>
+
+  <h2>Un cadre réglementaire encore léger, mais qui évolue</h2>
+  <p>En France, aucune obligation légale n'impose la communication du SOH lors de la vente d'un véhicule électrique d'occasion, contrairement au contrôle technique classique. Dans les faits, de plus en plus de professionnels le demandent systématiquement, tant cette donnée est devenue centrale dans la négociation du prix.</p>
+  <p>Le cadre européen évolue cependant : le règlement UE 2023/1542 prévoit la mise en place d'un passeport batterie numérique obligatoire à compter de février 2027, qui retracera l'historique complet de chaque batterie — origine des matériaux, historique de charge, état de santé — accessible via un simple QR code. En attendant cette généralisation, la vérification indépendante reste la seule garantie fiable pour un acheteur.</p>
+
+  <h2>Pourquoi c'est un facteur clé dans la négociation</h2>
+  <p>Le SOH n'est pas qu'une donnée technique : c'est un levier de négociation direct. Une batterie à 90 % de SOH ne justifie pas le même prix qu'une batterie à 100 %, même sur un véhicule par ailleurs identique en kilométrage et en année. Sur les batteries de grande capacité qui équipent les véhicules électriques premium, chaque point de SOH perdu représente un enjeu financier réel, à la fois sur l'usage quotidien et sur la valeur de revente future du véhicule.</p>
+
+  <h2>Notre approche</h2>
+  <p>Dans le cadre de nos mandats de recherche, chaque véhicule proposé à nos clients est systématiquement accompagné d'un rapport technique d'expertise indépendant, réalisé sur site, incluant la mesure du SOH et l'état esthétique général du véhicule. C'est une étape non négociable de notre processus : elle protège l'acheteur d'une mauvaise surprise sur un poste de coût qui peut représenter plusieurs milliers d'euros s'il est mal anticipé.</p>
+
+
+  <div class="article-cta">
+    <h3 style="color:var(--white); margin-bottom:14px;">Vous souhaitez un accompagnement personnalisé sur ce sujet ?</h3>
+    <p>Contactez notre cabinet pour un entretien de recherche privé.</p>
+    <a href="confier-ma-recherche.html" class="btn btn--blue btn--lg">Demander un entretien privé</a>
+  </div>
+</article>
+
+
+<footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__inner">
+
+        <div class="footer__brand">
+          <h3>Electric Premium Cars</h3>
+          <span class="footer__brand-sub">Cabinet de courtage</span>
+          <p>Spécialiste de l'acquisition de véhicules électriques premium en Europe. Recherche, sélection, négociation et accompagnement sur mesure.</p>
+        </div>
+
+        <div class="footer__col">
+          <h4>Navigation</h4>
+          <a href="index.html">Accueil</a>
+          <a href="#methode">Notre méthode</a>
+          <a href="vehicules-demandes.html">Véhicules demandés</a>
+          <a href="faq.html">FAQ</a>
+          <a href="guides.html">Guides</a>
+          <a href="confier-ma-recherche.html">Confier ma recherche</a>
+        </div>
+
+        <div class="footer__col">
+          <h4>Notre métier</h4>
+          <a href="#methode">Recherche européenne</a>
+          <a href="#methode">Sélection & expertise</a>
+          <a href="#methode">Négociation</a>
+          <a href="#methode">Acquisition sécurisée</a>
+        </div>
+
+        <div class="footer__col">
+          <h4>Contact</h4>
+          <a href="mailto:projet@electricpremiumcar.com">projet@electricpremiumcar.com</a>
+          <a href="tel:+33668696918">06 68 69 69 18</a>
+          <p>58 rue Monceau, Paris 75008</p>
+          <p>Réponse sous 24 heures ouvrées</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>© 2026 Electric Premium Cars — Tous droits réservés</p>
+      <div class="footer__bottom-links">
+        <a href="#">Mentions légales</a>
+        <a href="#">Politique de confidentialité</a>
+        <a href="#">CGV</a>
+      </div>
+    </div>
+  </footer>
+
+
+<script>
+  const nav = document.querySelector('.nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('nav--scrolled', window.scrollY > 40);
+  });
+
+  const burger = document.getElementById('navBurger');
+  const mobileMenu = document.getElementById('navMobile');
+  burger.addEventListener('click', () => {
+    burger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+</script>
+
+</body>
+</html>

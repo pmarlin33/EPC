@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Les meilleures voitures électriques premium en 2026 — Electric Premium Cars</title>
+<meta name="description" content="Panorama 2026 des meilleures voitures électriques premium : Porsche Taycan, Mercedes EQS, BMW i7, Macan Électrique, iX3 et plus.">
+<link rel="stylesheet" href="style.css">
+<style>
+  /* ─── ARTICLE — composants spécifiques, construits avec les tokens existants ─── */
+
+  .article-back {
+    padding-top: calc(var(--nav-h) + 48px);
+  }
+
+  .article-back__inner {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  .article-back a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-head);
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--grey-text);
+    transition: color 0.2s var(--ease);
+  }
+
+  .article-back a:hover { color: var(--blue-elec); }
+
+  .article-hero {
+    padding: 32px 0 56px;
+  }
+
+  .article-hero__inner {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  .article-hero h1 {
+    font-size: clamp(2rem, 4vw, 2.9rem);
+    margin: 18px 0 20px;
+  }
+
+  .article-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    color: var(--grey-text);
+    letter-spacing: 0.02em;
+  }
+
+  .article-meta__dot {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: var(--grey-mid);
+  }
+
+  .article-body {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 40px 100px;
+  }
+
+  .article-body p {
+    color: #3f3f3d;
+    font-size: 1.02rem;
+    line-height: 1.85;
+    margin-bottom: 26px;
+  }
+
+  .article-body h2 {
+    font-size: 1.55rem;
+    margin: 56px 0 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--grey-light);
+  }
+
+  .article-body h3 {
+    font-size: 1.1rem;
+    margin: 36px 0 14px;
+  }
+
+  .article-body ul, .article-body ol {
+    margin: 0 0 26px;
+    padding-left: 22px;
+  }
+
+  .article-body ul { list-style: disc; }
+  .article-body ol { list-style: decimal; }
+
+  .article-body li {
+    color: #3f3f3d;
+    font-size: 1.02rem;
+    line-height: 1.8;
+    margin-bottom: 10px;
+  }
+
+  .article-body strong {
+    color: var(--anthracite);
+    font-weight: 600;
+  }
+
+  .article-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 8px 0 32px;
+    font-size: 0.9rem;
+  }
+
+  .article-body th {
+    text-align: left;
+    font-family: var(--font-head);
+    font-weight: 600;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--grey-text);
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--grey-mid);
+  }
+
+  .article-body td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--grey-light);
+    color: var(--anthracite);
+  }
+
+  .article-body em {
+    color: var(--grey-text);
+    font-style: normal;
+    font-size: 0.9rem;
+  }
+
+  .article-cta {
+    background: var(--anthracite);
+    border-radius: var(--radius-lg);
+    padding: 48px 44px;
+    margin-top: 24px;
+    text-align: center;
+  }
+
+  .article-cta p {
+    color: rgba(255,255,255,0.6);
+    font-size: 1rem;
+    margin-bottom: 24px;
+  }
+
+  @media (max-width: 640px) {
+    .article-back__inner, .article-hero__inner, .article-body { padding-left: 24px; padding-right: 24px; }
+    .article-cta { padding: 36px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav" role="navigation" aria-label="Navigation principale">
+    <div class="nav__inner">
+
+
+      <ul class="nav__links" role="list">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="#methode">Notre méthode</a></li>
+        <li><a href="vehicules-demandes.html">Véhicules demandés</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="guides.html" class="active" aria-current="page">Guides</a></li>
+        <li><a href="confier-ma-recherche.html">Confier ma recherche</a></li>
+      </ul>
+
+
+
+      <button class="nav__burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="nav__mobile" id="mobileMenu" aria-hidden="true">
+      <a href="index.html">Accueil</a>
+      <a href="#methode">Notre méthode</a>
+      <a href="vehicules-demandes.html">Véhicules demandés</a>
+      <a href="faq.html">FAQ</a>
+      <a href="guides.html">Guides</a>
+      <a href="confier-ma-recherche.html">Confier ma recherche</a>
+      <a href="confier-ma-recherche.html" class="btn btn--primary" style="margin-top:8px; text-align:center;">Confier ma recherche</a>
+    </div>
+  </nav>
+
+<div class="nav__mobile" id="mobileMenu" aria-hidden="true">
+      <a href="index.html">Accueil</a>
+      <a href="#methode">Notre méthode</a>
+      <a href="vehicules-demandes.html">Véhicules demandés</a>
+      <a href="faq.html">FAQ</a>
+      <a href="guides.html">Guides</a>
+      <a href="confier-ma-recherche.html">Confier ma recherche</a>
+      <a href="confier-ma-recherche.html" class="btn btn--primary" style="margin-top:8px; text-align:center;">Confier ma recherche</a>
+    </div>
+
+
+<div class="article-back">
+  <div class="article-back__inner">
+    <a href="guides.html"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg> Tous les guides</a>
+  </div>
+</div>
+
+<section class="article-hero">
+  <div class="article-hero__inner">
+    <span class="label">Comparatifs & modèles</span>
+    <h1>Les meilleures voitures électriques premium en 2026 : notre panorama</h1>
+    <div class="article-meta">
+      <span>Electric Premium Cars</span>
+      <span class="article-meta__dot"></span>
+      <span>7 min de lecture</span>
+    </div>
+  </div>
+</section>
+
+<article class="article-body">
+
+  <p>Le segment de l'électrique premium a franchi un cap ces dernières années : autonomies dépassant régulièrement les 600 km, architectures 800 volts permettant de récupérer des centaines de kilomètres en une dizaine de minutes de recharge, habitacles numériques immersifs. Voici notre panorama des modèles qui font référence en 2026, berlines comme SUV.</p>
+
+  <h2>Berlines et GT électriques premium</h2>
+  <h3>Mercedes EQS : le confort et l'autonomie avant tout</h3>
+  <p>La Mercedes EQS reste une référence sur l'autonomie, avec une fiche technique annonçant jusqu'à 782 km WLTP selon la version. Son architecture intérieure, portée par le Hyperscreen qui couvre toute la largeur du tableau de bord, en fait l'option la plus orientée "salon roulant" du segment. Nous avons détaillé dans un article dédié <a href="depreciation-vehicules-electriques-premium.html" style="color:var(--blue-elec);">la dépréciation comparée de l'EQS face à ses rivales</a> — un point à ne pas négliger avant l'achat, la chute de valeur y étant particulièrement marquée sur les 12 à 24 premiers mois.</p>
+  <h3>BMW i7 : l'équilibre conducteur/passager</h3>
+  <p>La BMW i7 revendique environ 625 km d'autonomie WLTP et mise sur un équilibre entre plaisir de conduite et confort arrière, notamment via son Theatre Screen de 31 pouces qui transforme la banquette arrière en salle de cinéma privée. C'est un choix pertinent pour qui recherche un usage mixte conducteur/passager, avec toutefois une vigilance à avoir sur sa valeur de revente, la moins favorable des trois grandes berlines premium sur la durée.</p>
+  <h3>Porsche Taycan : la référence sportive</h3>
+  <p>Le Taycan reste le choix de référence pour qui privilégie la dynamique de conduite et la vitesse de recharge, grâce à son architecture 800 V parmi les plus rapides du marché. Sur cette gamme, le choix entre les carrosseries Sport Turismo et Cross Turismo mérite un comparatif à part entière — <a href="taycan-sport-turismo-vs-cross-turismo.html" style="color:var(--blue-elec);">nous l'avons détaillé ici</a> — tout comme la question du niveau de motorisation, qui influence bien plus l'autonomie et les performances que le choix de la carrosserie elle-même.</p>
+
+  <h2>SUV et crossovers électriques premium</h2>
+  <h3>Porsche Macan Électrique</h3>
+  <p>Version 100 % électrique de l'un des SUV compacts premium les plus vendus en Europe, le Macan électrique combine le comportement routier caractéristique de la marque avec les standards de recharge rapide propres à l'architecture Porsche. Un choix pertinent pour qui veut retrouver l'ADN Porsche dans un format SUV plus polyvalent que le Taycan.</p>
+  <h3>BMW iX3 Neue Klasse</h3>
+  <p>Le BMW iX3 nouvelle génération inaugure la plateforme Neue Klasse du constructeur, avec des systèmes d'assistance à la conduite de niveau avancé et une orientation technologique marquée. Il se positionne comme une alternative crédible aux SUV premium établis, dans un segment de plus en plus disputé.</p>
+  <h3>Mercedes GLC Électrique et EQB</h3>
+  <p>Sur le segment SUV familial premium, Mercedes complète son offre électrique avec le GLC Électrique et l'EQB, deux déclinaisons qui visent des usages différents : le GLC pour un positionnement plus haut de gamme, l'EQB pour une polyvalence familiale à un ticket d'entrée plus accessible.</p>
+
+  <h2>Comment choisir entre ces modèles</h2>
+  <p>Au-delà des caractéristiques techniques, deux critères doivent peser autant que la fiche produit dans votre décision :</p>
+  <ul>
+    <li><strong>La dépréciation attendue</strong>, qui varie sensiblement d'un modèle à l'autre — jusqu'à 20 points d'écart sur 5 ans entre les modèles les mieux et les moins bien positionnés sur ce critère au sein même du segment premium.</li>
+    <li><strong>L'état de santé de la batterie (SOH)</strong> si vous envisagez l'occasion, qui conditionne directement l'autonomie réelle et la valeur de revente future du véhicule.</li>
+  </ul>
+  <p>Nous avons consacré des articles détaillés à ces deux sujets, à consulter avant toute décision d'achat sur ce segment.</p>
+
+  <h2>Notre accompagnement</h2>
+  <p>Que votre choix se porte sur une berline GT ou un SUV premium, notre cabinet source ces véhicules sur l'ensemble du marché européen, avec une vérification technique indépendante systématique avant toute proposition. Chaque projet fait l'objet d'un cahier des charges personnalisé, plutôt que d'un choix limité au stock disponible localement.</p>
+
+
+  <div class="article-cta">
+    <h3 style="color:var(--white); margin-bottom:14px;">Vous souhaitez un accompagnement personnalisé sur ce sujet ?</h3>
+    <p>Contactez notre cabinet pour un entretien de recherche privé.</p>
+    <a href="confier-ma-recherche.html" class="btn btn--blue btn--lg">Demander un entretien privé</a>
+  </div>
+</article>
+
+
+<footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__inner">
+
+        <div class="footer__brand">
+          <h3>Electric Premium Cars</h3>
+          <span class="footer__brand-sub">Cabinet de courtage</span>
+          <p>Spécialiste de l'acquisition de véhicules électriques premium en Europe. Recherche, sélection, négociation et accompagnement sur mesure.</p>
+        </div>
+
+        <div class="footer__col">
+          <h4>Navigation</h4>
+          <a href="index.html">Accueil</a>
+          <a href="#methode">Notre méthode</a>
+          <a href="vehicules-demandes.html">Véhicules demandés</a>
+          <a href="faq.html">FAQ</a>
+          <a href="guides.html">Guides</a>
+          <a href="confier-ma-recherche.html">Confier ma recherche</a>
+        </div>
+
+        <div class="footer__col">
+          <h4>Notre métier</h4>
+          <a href="#methode">Recherche européenne</a>
+          <a href="#methode">Sélection & expertise</a>
+          <a href="#methode">Négociation</a>
+          <a href="#methode">Acquisition sécurisée</a>
+        </div>
+
+        <div class="footer__col">
+          <h4>Contact</h4>
+          <a href="mailto:projet@electricpremiumcar.com">projet@electricpremiumcar.com</a>
+          <a href="tel:+33668696918">06 68 69 69 18</a>
+          <p>58 rue Monceau, Paris 75008</p>
+          <p>Réponse sous 24 heures ouvrées</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>© 2026 Electric Premium Cars — Tous droits réservés</p>
+      <div class="footer__bottom-links">
+        <a href="#">Mentions légales</a>
+        <a href="#">Politique de confidentialité</a>
+        <a href="#">CGV</a>
+      </div>
+    </div>
+  </footer>
+
+
+<script>
+  const nav = document.querySelector('.nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('nav--scrolled', window.scrollY > 40);
+  });
+
+  const burger = document.getElementById('navBurger');
+  const mobileMenu = document.getElementById('navMobile');
+  burger.addEventListener('click', () => {
+    burger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+</script>
+
+</body>
+</html>

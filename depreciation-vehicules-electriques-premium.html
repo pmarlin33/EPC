@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dépréciation des véhicules électriques premium — Electric Premium Cars</title>
+<meta name="description" content="Porsche Taycan, Mercedes EQS, BMW i7 : comparatif de la dépréciation sur 5 ans dans le segment électrique premium.">
+<link rel="stylesheet" href="style.css">
+<style>
+  /* ─── ARTICLE — composants spécifiques, construits avec les tokens existants ─── */
+
+  .article-back {
+    padding-top: calc(var(--nav-h) + 48px);
+  }
+
+  .article-back__inner {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  .article-back a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-head);
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--grey-text);
+    transition: color 0.2s var(--ease);
+  }
+
+  .article-back a:hover { color: var(--blue-elec); }
+
+  .article-hero {
+    padding: 32px 0 56px;
+  }
+
+  .article-hero__inner {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  .article-hero h1 {
+    font-size: clamp(2rem, 4vw, 2.9rem);
+    margin: 18px 0 20px;
+  }
+
+  .article-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    color: var(--grey-text);
+    letter-spacing: 0.02em;
+  }
+
+  .article-meta__dot {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: var(--grey-mid);
+  }
+
+  .article-body {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 40px 100px;
+  }
+
+  .article-body p {
+    color: #3f3f3d;
+    font-size: 1.02rem;
+    line-height: 1.85;
+    margin-bottom: 26px;
+  }
+
+  .article-body h2 {
+    font-size: 1.55rem;
+    margin: 56px 0 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--grey-light);
+  }
+
+  .article-body h3 {
+    font-size: 1.1rem;
+    margin: 36px 0 14px;
+  }
+
+  .article-body ul, .article-body ol {
+    margin: 0 0 26px;
+    padding-left: 22px;
+  }
+
+  .article-body ul { list-style: disc; }
+  .article-body ol { list-style: decimal; }
+
+  .article-body li {
+    color: #3f3f3d;
+    font-size: 1.02rem;
+    line-height: 1.8;
+    margin-bottom: 10px;
+  }
+
+  .article-body strong {
+    color: var(--anthracite);
+    font-weight: 600;
+  }
+
+  .article-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 8px 0 32px;
+    font-size: 0.9rem;
+  }
+
+  .article-body th {
+    text-align: left;
+    font-family: var(--font-head);
+    font-weight: 600;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--grey-text);
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--grey-mid);
+  }
+
+  .article-body td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--grey-light);
+    color: var(--anthracite);
+  }
+
+  .article-body em {
+    color: var(--grey-text);
+    font-style: normal;
+    font-size: 0.9rem;
+  }
+
+  .article-cta {
+    background: var(--anthracite);
+    border-radius: var(--radius-lg);
+    padding: 48px 44px;
+    margin-top: 24px;
+    text-align: center;
+  }
+
+  .article-cta p {
+    color: rgba(255,255,255,0.6);
+    font-size: 1rem;
+    margin-bottom: 24px;
+  }
+
+  @media (max-width: 640px) {
+    .article-back__inner, .article-hero__inner, .article-body { padding-left: 24px; padding-right: 24px; }
+    .article-cta { padding: 36px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav" role="navigation" aria-label="Navigation principale">
+    <div class="nav__inner">
+
+
+      <ul class="nav__links" role="list">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="#methode">Notre méthode</a></li>
+        <li><a href="vehicules-demandes.html">Véhicules demandés</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="guides.html" class="active" aria-current="page">Guides</a></li>
+        <li><a href="confier-ma-recherche.html">Confier ma recherche</a></li>
+      </ul>
+
+
+
+      <button class="nav__burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="nav__mobile" id="mobileMenu" aria-hidden="true">
+      <a href="index.html">Accueil</a>
+      <a href="#methode">Notre méthode</a>
+      <a href="vehicules-demandes.html">Véhicules demandés</a>
+      <a href="faq.html">FAQ</a>
+      <a href="guides.html">Guides</a>
+      <a href="confier-ma-recherche.html">Confier ma recherche</a>
+      <a href="confier-ma-recherche.html" class="btn btn--primary" style="margin-top:8px; text-align:center;">Confier ma recherche</a>
+    </div>
+  </nav>
+
+<div class="nav__mobile" id="mobileMenu" aria-hidden="true">
+      <a href="index.html">Accueil</a>
+      <a href="#methode">Notre méthode</a>
+      <a href="vehicules-demandes.html">Véhicules demandés</a>
+      <a href="faq.html">FAQ</a>
+      <a href="guides.html">Guides</a>
+      <a href="confier-ma-recherche.html">Confier ma recherche</a>
+      <a href="confier-ma-recherche.html" class="btn btn--primary" style="margin-top:8px; text-align:center;">Confier ma recherche</a>
+    </div>
+
+
+<div class="article-back">
+  <div class="article-back__inner">
+    <a href="guides.html"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg> Tous les guides</a>
+  </div>
+</div>
+
+<section class="article-hero">
+  <div class="article-hero__inner">
+    <span class="label">Marché & revente</span>
+    <h1>Dépréciation des véhicules électriques premium : Porsche, Mercedes, BMW comparés</h1>
+    <div class="article-meta">
+      <span>Electric Premium Cars</span>
+      <span class="article-meta__dot"></span>
+      <span>7 min de lecture</span>
+    </div>
+  </div>
+</section>
+
+<article class="article-body">
+
+  <p>La dépréciation est, avec le coût d'achat lui-même, le facteur qui pèse le plus lourd dans le coût réel de possession d'un véhicule électrique premium. Sur ce segment, les écarts entre marques peuvent représenter des dizaines de milliers d'euros sur cinq ans. Voici un comparatif basé sur les tendances de marché observées en 2026 pour la Porsche Taycan, la Mercedes EQS et la BMW i7.</p>
+
+  <h2>Pourquoi les électriques premium se déprécient plus vite</h2>
+  <p>Deux phénomènes se cumulent sur ce segment. D'abord, toutes les voitures de luxe se déprécient plus rapidement que la moyenne du marché, électriques ou non — un effet classique lié à un public d'acheteurs neufs restreint et à un renouvellement technologique perçu comme rapide. Ensuite, les véhicules électriques dans leur ensemble se déprécient plus vite que les modèles thermiques équivalents : une étude sectorielle récente évalue la perte de valeur moyenne des électriques à environ 59 % à cinq ans, contre environ 46 % pour les modèles thermiques comparables.</p>
+  <p>Un véhicule électrique premium cumule donc les deux effets — luxe et électrique — ce qui explique des courbes de dépréciation particulièrement marquées sur ce segment.</p>
+
+  <h2>Comparatif à 5 ans : Porsche, Mercedes, BMW</h2>
+  <table>
+    <tr><th>Modèle</th><th>Dépréciation estimée à 5 ans</th></tr>
+    <tr><td>Porsche Taycan</td><td>Environ 59 %</td></tr>
+    <tr><td>Mercedes EQS</td><td>Environ 55 à 65 % (certaines estimations jusqu'à ~70 %)</td></tr>
+    <tr><td>BMW i7</td><td>Environ 77 %</td></tr>
+  </table>
+  <p><em>Ces chiffres, issus de données de marché nord-américaines et européennes, restent des ordres de grandeur : ils varient selon la finition, le kilométrage, l'état et le marché de revente concerné. Ils dessinent néanmoins une hiérarchie assez nette.</em></p>
+
+  <h3>Porsche Taycan : la moins mauvaise élève de la catégorie</h3>
+  <p>Le Taycan affiche la dépréciation la plus contenue des trois, un avantage généralement attribué à l'aura de la marque Porsche et à une base d'acheteurs d'occasion plus fidèle. Le revers de la médaille : sa dépréciation reste malgré tout plus rapide que ce à quoi les acheteurs habitués aux modèles thermiques Porsche pourraient s'attendre. Certaines configurations à diffusion limitée — GTS, Sport Turismo, teintes rares — tendent à mieux résister grâce à leur rareté relative sur le marché de l'occasion.</p>
+
+  <h3>Mercedes EQS : la chute la plus brutale en début de vie</h3>
+  <p>L'EQS se distingue par une perte de valeur particulièrement rapide sur les 12 à 24 premiers mois — certaines études évoquent près de la moitié de la valeur neuve perdue dès la première année. Passé ce cap, le rythme de dépréciation ralentit nettement, ce qui en fait paradoxalement une opportunité pour l'acheteur d'occasion patient : le plus gros de la décote a déjà été absorbé par le premier propriétaire.</p>
+
+  <h3>BMW i7 : la dépréciation la plus marquée du trio</h3>
+  <p>L'i7 affiche le taux de perte à 5 ans le plus élevé des trois modèles comparés ici. Cette différence s'explique en partie par un positionnement encore en construction sur le segment électrique, face à des rivaux dont l'identité EV est plus affirmée.</p>
+
+  <h2>Ce que ça change concrètement pour un acheteur</h2>
+  <p>Sur ce type de véhicules, la période la plus coûteuse en dépréciation se situe presque toujours dans les 12 à 24 premiers mois de vie du véhicule. Cela a une implication directe pour un acheteur qui vise l'occasion récente : acquérir un véhicule déjà âgé de 12 à 24 mois permet généralement de laisser le premier propriétaire absorber la partie la plus sévère de la décote, tout en profitant d'un véhicule encore quasiment neuf en termes d'usage et de garantie.</p>
+  <p>C'est exactement la logique qui sous-tend nos mandats de recherche : cibler des véhicules récents à faible kilométrage, déjà sortis de leur phase de dépréciation la plus abrupte, pour optimiser le rapport entre le capital engagé et la valeur réellement conservée sur la durée de détention prévue.</p>
+
+  <h2>En résumé</h2>
+  <p>Sur ce comparatif, la Porsche Taycan se positionne comme le choix le plus prudent en matière de valeur résiduelle parmi les trois modèles étudiés, la Mercedes EQS comme l'opportunité la plus intéressante à l'achat en occasion une fois la première chute encaissée, et la BMW i7 comme le modèle nécessitant la plus grande vigilance sur ce critère précis. Dans tous les cas, la configuration, le kilométrage et l'état de la batterie restent des facteurs au moins aussi déterminants que la marque elle-même.</p>
+
+
+  <div class="article-cta">
+    <h3 style="color:var(--white); margin-bottom:14px;">Vous souhaitez un accompagnement personnalisé sur ce sujet ?</h3>
+    <p>Contactez notre cabinet pour un entretien de recherche privé.</p>
+    <a href="confier-ma-recherche.html" class="btn btn--blue btn--lg">Demander un entretien privé</a>
+  </div>
+</article>
+
+
+<footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__inner">
+
+        <div class="footer__brand">
+          <h3>Electric Premium Cars</h3>
+          <span class="footer__brand-sub">Cabinet de courtage</span>
+          <p>Spécialiste de l'acquisition de véhicules électriques premium en Europe. Recherche, sélection, négociation et accompagnement sur mesure.</p>
+        </div>
+
+        <div class="footer__col">
+          <h4>Navigation</h4>
+          <a href="index.html">Accueil</a>
+          <a href="#methode">Notre méthode</a>
+          <a href="vehicules-demandes.html">Véhicules demandés</a>
+          <a href="faq.html">FAQ</a>
+          <a href="guides.html">Guides</a>
+          <a href="confier-ma-recherche.html">Confier ma recherche</a>
+        </div>
+
+        <div class="footer__col">
+          <h4>Notre métier</h4>
+          <a href="#methode">Recherche européenne</a>
+          <a href="#methode">Sélection & expertise</a>
+          <a href="#methode">Négociation</a>
+          <a href="#methode">Acquisition sécurisée</a>
+        </div>
+
+        <div class="footer__col">
+          <h4>Contact</h4>
+          <a href="mailto:projet@electricpremiumcar.com">projet@electricpremiumcar.com</a>
+          <a href="tel:+33668696918">06 68 69 69 18</a>
+          <p>58 rue Monceau, Paris 75008</p>
+          <p>Réponse sous 24 heures ouvrées</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>© 2026 Electric Premium Cars — Tous droits réservés</p>
+      <div class="footer__bottom-links">
+        <a href="#">Mentions légales</a>
+        <a href="#">Politique de confidentialité</a>
+        <a href="#">CGV</a>
+      </div>
+    </div>
+  </footer>
+
+
+<script>
+  const nav = document.querySelector('.nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('nav--scrolled', window.scrollY > 40);
+  });
+
+  const burger = document.getElementById('navBurger');
+  const mobileMenu = document.getElementById('navMobile');
+  burger.addEventListener('click', () => {
+    burger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+</script>
+
+</body>
+</html>

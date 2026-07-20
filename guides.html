@@ -1,563 +1,228 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guides — Electric Premium Cars</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  /* ─── GUIDES — composants spécifiques à cette page ───
+     Construits avec les tokens existants du design system
+     (voir style.css : palette, --font-head, --font-body, --radius, --ease) */
 
-  <!-- ─── SEO ─── -->
-  <title>FAQ — Questions fréquentes — Electric Premium Cars</title>
-  <meta name="description" content="Toutes les réponses à vos questions sur le courtage automobile, le fonctionnement d'Electric Premium Cars, les garanties, les délais et la sécurité de vos transactions." />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://www.electricpremiumcars.fr/faq.html" />
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="FAQ — Electric Premium Cars" />
-  <meta property="og:description" content="Toutes les réponses à vos questions sur notre cabinet de courtage spécialisé en véhicules électriques premium." />
-  <meta property="og:url" content="https://www.electricpremiumcars.fr/faq.html" />
-  <meta property="og:locale" content="fr_FR" />
-
-  <!-- Schema.org FAQPage -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": []
+  .guides-hero {
+    padding-top: calc(var(--nav-h) + 72px);
   }
-  </script>
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  .guides__filters {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 64px;
+  }
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="style.css" />
+  .guides__filter-btn {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: var(--grey-text);
+    background: var(--white);
+    border: 1px solid var(--grey-mid);
+    border-radius: 100px;
+    padding: 10px 20px;
+    transition: all 0.2s var(--ease);
+  }
 
-  <style>
-    /* ── Page FAQ specific ── */
-    .faq-page-hero {
-      padding-top: calc(var(--nav-h) + 80px);
-      padding-bottom: 72px;
-      background: var(--white);
-      border-bottom: 1px solid var(--grey-light);
-      text-align: center;
-    }
+  .guides__filter-btn:hover {
+    border-color: var(--anthracite);
+    color: var(--anthracite);
+  }
 
-    .faq-page-hero h1 {
-      margin-bottom: 16px;
-    }
+  .guides__filter-btn.active {
+    background: var(--anthracite);
+    border-color: var(--anthracite);
+    color: var(--white);
+  }
 
-    .faq-page-hero p {
-      font-size: 1rem;
-      max-width: 480px;
-      margin: 0 auto;
-      line-height: 1.8;
-    }
+  .guides__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--grey-light);
+    border: 1px solid var(--grey-light);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
 
-    /* ── Categories ── */
-    .faq-main {
-      padding: 80px 0 120px;
-      background: var(--off-white);
-    }
+  .guide-card {
+    background: var(--white);
+    padding: 44px 40px;
+    transition: background 0.2s var(--ease);
+    display: flex;
+    flex-direction: column;
+  }
 
-    .faq-layout {
-      display: grid;
-      grid-template-columns: 220px 1fr;
-      gap: 64px;
-      align-items: start;
-    }
+  .guide-card:hover {
+    background: var(--off-white);
+  }
 
-    /* Sidebar categories */
-    .faq-sidebar {
-      position: sticky;
-      top: calc(var(--nav-h) + 32px);
-    }
+  .guide-card .label {
+    margin-bottom: 18px;
+  }
 
-    .faq-sidebar__title {
-      font-family: var(--font-body);
-      font-size: 0.68rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--grey-text);
-      margin-bottom: 16px;
-    }
+  .guide-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 14px;
+  }
 
-    .faq-sidebar__nav {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
+  .guide-card p {
+    font-size: 0.88rem;
+    margin-bottom: 24px;
+    flex: 1;
+  }
 
-    .faq-sidebar__link {
-      font-family: var(--font-body);
-      font-size: 0.875rem;
-      color: var(--grey-text);
-      padding: 9px 12px;
-      border-radius: var(--radius-sm);
-      transition: all 0.2s var(--ease);
-      cursor: pointer;
-      border: none;
-      background: none;
-      text-align: left;
-      width: 100%;
-    }
+  .guide-card__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-head);
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--anthracite);
+    transition: color 0.2s var(--ease), gap 0.2s var(--ease);
+  }
 
-    .faq-sidebar__link:hover {
-      background: var(--grey-light);
-      color: var(--anthracite);
-    }
+  .guide-card:hover .guide-card__link {
+    color: var(--blue-elec);
+    gap: 12px;
+  }
 
-    .faq-sidebar__link.active {
-      background: var(--white);
-      color: var(--anthracite);
-      font-weight: 600;
-      border: 1px solid var(--grey-light);
-    }
+  .guide-card__link svg {
+    flex-shrink: 0;
+  }
 
-    /* FAQ content */
-    .faq-content {
-      display: flex;
-      flex-direction: column;
-      gap: 48px;
-    }
-
-    .faq-category {
-      background: var(--white);
-      border: 1px solid var(--grey-light);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-    }
-
-    .faq-category__header {
-      padding: 28px 36px;
-      border-bottom: 1px solid var(--grey-light);
-    }
-
-    .faq-category__label {
-      font-family: var(--font-body);
-      font-size: 0.68rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--blue-elec);
-      display: block;
-      margin-bottom: 6px;
-    }
-
-    .faq-category__title {
-      font-family: var(--font-head);
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--anthracite);
-      letter-spacing: -0.01em;
-    }
-
-    .faq-category__list {
-      padding: 0 36px;
-    }
-
-    /* FAQ item inside category */
-    .faq-category .faq__item {
-      border-bottom: 1px solid var(--grey-light);
-    }
-
-    .faq-category .faq__item:last-child {
-      border-bottom: none;
-    }
-
-    .faq-category .faq__question {
-      padding: 22px 0;
-      font-size: 0.95rem;
-    }
-
-    .faq-category .faq__answer {
-      padding-bottom: 22px;
-    }
-
-    /* CTA bottom */
-    .faq-cta {
-      background: var(--anthracite);
-      padding: 80px 0;
-      text-align: center;
-    }
-
-    .faq-cta h2 {
-      color: var(--white);
-      font-size: clamp(1.5rem, 2.5vw, 2rem);
-      margin-bottom: 16px;
-    }
-
-    .faq-cta p {
-      color: rgba(255,255,255,0.5);
-      font-size: 0.95rem;
-      margin-bottom: 36px;
-      max-width: 400px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    /* ── Responsive ── */
-    @media (max-width: 1024px) {
-      .faq-layout {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-      .faq-sidebar {
-        position: static;
-      }
-      .faq-sidebar__nav {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 8px;
-      }
-      .faq-sidebar__link {
-        width: auto;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .faq-page-hero {
-        padding-top: calc(var(--nav-h) + 48px);
-        padding-bottom: 52px;
-      }
-      .faq-category__header { padding: 24px 20px; }
-      .faq-category__list { padding: 0 20px; }
-      .faq-category .faq__question { font-size: 0.9rem; }
-    }
-  </style>
+  @media (max-width: 768px) {
+    .guides__grid { grid-template-columns: 1fr; border-radius: var(--radius); }
+    .guide-card { padding: 36px 28px; }
+  }
+</style>
 </head>
 <body>
 
-  <!-- ═══════════════════════════════════════════
-       NAVIGATION
-  ═══════════════════════════════════════════ -->
-  <nav class="nav" id="nav" role="navigation" aria-label="Navigation principale">
-    <div class="nav__inner">
-      <a href="index.html" class="nav__logo" aria-label="Electric Premium Cars — Accueil">
-        <img src="logo.png" alt="Electric Premium Cars" class="nav__logo-img" />
-      </a>
-
-      <ul class="nav__links" role="list">
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="index.html#methode">Notre méthode</a></li>
-        <li><a href="vehicules-demandes.html">Véhicules demandés</a></li>
-        <li><a href="faq.html" class="active" aria-current="page">FAQ</a></li>
-        <li><a href="guides.html">Guides</a></li>
-        <li><a href="confier-ma-recherche.html">Confier ma recherche</a></li>
-      </ul>
-
-      <button class="nav__burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-
-    <div class="nav__mobile" id="mobileMenu" aria-hidden="true">
+<nav class="nav nav--scrolled">
+  <div class="nav__inner">
+    <a class="nav__logo" href="index.html">
+      <img class="nav__logo-img" src="logo.png" alt="Electric Premium Cars">
+    </a>
+    <div class="nav__links">
       <a href="index.html">Accueil</a>
-      <a href="index.html#methode">Notre méthode</a>
-      <a href="vehicules-demandes.html">Véhicules demandés</a>
-      <a href="faq.html">FAQ</a>
-      <a href="guides.html">Guides</a>
-      <a href="confier-ma-recherche.html">Confier ma recherche</a>
-      <a href="confier-ma-recherche.html" class="btn btn--primary" style="margin-top:8px; text-align:center;">Confier ma recherche</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">À propos</a>
+      <a href="guides.html" class="active">Guides</a>
+      <a href="contact.html">Contact</a>
     </div>
-  </nav>
+    <a href="contact.html" class="btn btn--primary nav__cta">Entretien privé</a>
+    <button class="nav__burger" id="navBurger" aria-label="Ouvrir le menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
 
+<div class="nav__mobile" id="navMobile">
+  <a href="index.html">Accueil</a>
+  <a href="services.html">Services</a>
+  <a href="about.html">À propos</a>
+  <a href="guides.html">Guides</a>
+  <a href="contact.html">Contact</a>
+</div>
 
-  <!-- ═══════════════════════════════════════════
-       PAGE HERO
-  ═══════════════════════════════════════════ -->
-  <section class="faq-page-hero">
-    <div class="container">
-      <span class="label reveal" style="justify-content: center; display: flex;">Questions fréquentes</span>
-      <h1 class="reveal reveal-delay-1">Tout ce que vous souhaitez savoir.</h1>
-      <p class="reveal reveal-delay-2">
-        Vous avez une question sur notre fonctionnement, nos honoraires ou le processus d'acquisition ? Vous trouverez la réponse ici.
+<section class="guides-hero section--sm">
+  <div class="container">
+    <div class="section__head--center">
+      <span class="label">Ressources du cabinet</span>
+      <h1 class="section__title">Guides & analyses</h1>
+      <p class="section__sub" style="margin: 0 auto;">
+        Nos repères sur le marché de l'électrique premium : comparatifs, dépréciation, expertise technique et démarches d'import.
       </p>
     </div>
-  </section>
 
-
-  <!-- ═══════════════════════════════════════════
-       FAQ PRINCIPALE
-  ═══════════════════════════════════════════ -->
-  <section class="faq-main" aria-labelledby="faq-main-title">
-    <div class="container">
-      <div class="faq-layout">
-
-        <!-- Sidebar navigation -->
-        <aside class="faq-sidebar" aria-label="Catégories FAQ">
-          <p class="faq-sidebar__title">Catégories</p>
-          <nav class="faq-sidebar__nav" role="list">
-            <button class="faq-sidebar__link active" data-target="cat-general">Notre métier</button>
-            <button class="faq-sidebar__link" data-target="cat-process">Processus</button>
-            <button class="faq-sidebar__link" data-target="cat-finance">Finances & honoraires</button>
-            <button class="faq-sidebar__link" data-target="cat-garanties">Garanties</button>
-            <button class="faq-sidebar__link" data-target="cat-delais">Délais & livraison</button>
-          </nav>
-        </aside>
-
-        <!-- FAQ content -->
-        <div class="faq-content" id="faq-content">
-
-          <!-- Catégorie : Notre métier -->
-          <div class="faq-category reveal" id="cat-general">
-            <div class="faq-category__header">
-              <span class="faq-category__label">01</span>
-              <h2 class="faq-category__title" id="faq-title">Notre métier</h2>
-            </div>
-            <div class="faq-category__list" role="list">
-
-              <div class="faq__item" role="listitem">
-                <button class="faq__question" aria-expanded="false">
-                  <span>Qu'est-ce qu'un cabinet de courtage automobile ?</span>
-                  <div class="faq__icon" aria-hidden="true">
-                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                  </div>
-                </button>
-                <div class="faq__answer">
-                  Les réponses seront ajoutées prochainement.
-                </div>
-              </div>
-
-              <div class="faq__item" role="listitem">
-                <button class="faq__question" aria-expanded="false">
-                  <span>Quelle est la différence avec un mandataire automobile ?</span>
-                  <div class="faq__icon" aria-hidden="true">
-                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                  </div>
-                </button>
-                <div class="faq__answer">
-                  Les réponses seront ajoutées prochainement.
-                </div>
-              </div>
-
-              <div class="faq__item" role="listitem">
-                <button class="faq__question" aria-expanded="false">
-                  <span>Êtes-vous un importateur ?</span>
-                  <div class="faq__icon" aria-hidden="true">
-                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                  </div>
-                </button>
-                <div class="faq__answer">
-                  Les réponses seront ajoutées prochainement.
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- Catégorie : Processus -->
-          <div class="faq-category reveal" id="cat-process">
-            <div class="faq-category__header">
-              <span class="faq-category__label">02</span>
-              <h2 class="faq-category__title">Processus d'acquisition</h2>
-            </div>
-            <div class="faq-category__list" role="list">
-
-              <div class="faq__item" role="listitem">
-                <button class="faq__question" aria-expanded="false">
-                  <span>Comment se déroule une acquisition avec EPC ?</span>
-                  <div class="faq__icon" aria-hidden="true">
-                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                  </div>
-                </button>
-                <div class="faq__answer">
-                  Les réponses seront ajoutées prochainement.
-                </div>
-              </div>
-
-              <div class="faq__item" role="listitem">
-                <button class="faq__question" aria-expanded="false">
-                  <span>Dans quels pays recherchez-vous les véhicules ?</span>
-                  <div class="faq__icon" aria-hidden="true">
-                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                  </div>
-                </button>
-                <div class="faq__answer">
-                  Les réponses seront ajoutées prochainement.
-                </div>
-              </div>
-
-              <div class="faq__item" role="listitem">
-                <button class="faq__question" aria-expanded="false">
-                  <span>Puis-je venir voir le véhicule avant de l'acheter ?</span>
-                  <div class="faq__icon" aria-hidden="true">
-                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                  </div>
-                </button>
-                <div class="faq__answer">
-                  Les réponses seront ajoutées prochainement.
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- Catégorie : Finances & honoraires -->
-          <div class="faq-category reveal" id="cat-finance">
-            <div class="faq-category__header">
-              <span class="faq-category__label">03</span>
-              <h2 class="faq-category__title">Finances & honoraires</h2>
-            </div>
-            <div class="faq-category__list" role="list">
-
-              <div class="faq__item" role="listitem">
-                <button class="faq__question" aria-expanded="false">
-                  <span>Comment fonctionne le paiement ? À qui règle-t-on le véhicule ?</span>
-                  <div class="faq__icon" aria-hidden="true">
-                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                  </div>
-                </button>
-                <div class="faq__answer">
-                  Les réponses seront ajoutées prochainement.
-                </div>
-              </div>
-
-              <div class="faq__item" role="listitem">
-                <button class="faq__question" aria-expanded="false">
-                  <span>Quels sont vos honoraires ?</span>
-                  <div class="faq__icon" aria-hidden="true">
-                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                  </div>
-                </button>
-                <div class="faq__answer">
-                  Les réponses seront ajoutées prochainement.
-                </div>
-              </div>
-
-              <div class="faq__item" role="listitem">
-                <button class="faq__question" aria-expanded="false">
-                  <span>Y a-t-il des frais cachés ?</span>
-                  <div class="faq__icon" aria-hidden="true">
-                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                  </div>
-                </button>
-                <div class="faq__answer">
-                  Les réponses seront ajoutées prochainement.
-                </div>
-              </div>
-
-              <div class="faq__item" role="listitem">
-                <button class="faq__question" aria-expanded="false">
-                  <span>Proposez-vous des solutions de financement ?</span>
-                  <div class="faq__icon" aria-hidden="true">
-                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                  </div>
-                </button>
-                <div class="faq__answer">
-                  Les réponses seront ajoutées prochainement.
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- Catégorie : Garanties -->
-          <div class="faq-category reveal" id="cat-garanties">
-            <div class="faq-category__header">
-              <span class="faq-category__label">04</span>
-              <h2 class="faq-category__title">Garanties constructeur</h2>
-            </div>
-            <div class="faq-category__list" role="list">
-
-              <div class="faq__item" role="listitem">
-                <button class="faq__question" aria-expanded="false">
-                  <span>Les garanties constructeur sont-elles préservées ?</span>
-                  <div class="faq__icon" aria-hidden="true">
-                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                  </div>
-                </button>
-                <div class="faq__answer">
-                  Les réponses seront ajoutées prochainement.
-                </div>
-              </div>
-
-              <div class="faq__item" role="listitem">
-                <button class="faq__question" aria-expanded="false">
-                  <span>La garantie batterie est-elle valable en France ?</span>
-                  <div class="faq__icon" aria-hidden="true">
-                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                  </div>
-                </button>
-                <div class="faq__answer">
-                  Les réponses seront ajoutées prochainement.
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- Catégorie : Délais & livraison -->
-          <div class="faq-category reveal" id="cat-delais">
-            <div class="faq-category__header">
-              <span class="faq-category__label">05</span>
-              <h2 class="faq-category__title">Délais & livraison</h2>
-            </div>
-            <div class="faq-category__list" role="list">
-
-              <div class="faq__item" role="listitem">
-                <button class="faq__question" aria-expanded="false">
-                  <span>Quels sont vos délais habituels d'acquisition ?</span>
-                  <div class="faq__icon" aria-hidden="true">
-                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                  </div>
-                </button>
-                <div class="faq__answer">
-                  Les réponses seront ajoutées prochainement.
-                </div>
-              </div>
-
-              <div class="faq__item" role="listitem">
-                <button class="faq__question" aria-expanded="false">
-                  <span>Comment se passe la livraison du véhicule ?</span>
-                  <div class="faq__icon" aria-hidden="true">
-                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                  </div>
-                </button>
-                <div class="faq__answer">
-                  Les réponses seront ajoutées prochainement.
-                </div>
-              </div>
-
-              <div class="faq__item" role="listitem">
-                <button class="faq__question" aria-expanded="false">
-                  <span>Prenez-vous en charge l'immatriculation ?</span>
-                  <div class="faq__icon" aria-hidden="true">
-                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                  </div>
-                </button>
-                <div class="faq__answer">
-                  Les réponses seront ajoutées prochainement.
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-        </div>
-      </div>
+    <div class="guides__filters" id="guidesFilters">
+      <button class="guides__filter-btn active" data-filter="all">Tous</button>
+      <button class="guides__filter-btn" data-filter="comparatifs">Comparatifs & modèles</button>
+      <button class="guides__filter-btn" data-filter="marche">Marché & revente</button>
+      <button class="guides__filter-btn" data-filter="import">Import & démarches</button>
+      <button class="guides__filter-btn" data-filter="expertise">Expertise technique</button>
     </div>
-  </section>
 
+    <div class="guides__grid" id="guidesGrid">
 
-  <!-- ═══════════════════════════════════════════
-       CTA FINAL
-  ═══════════════════════════════════════════ -->
-  <section class="faq-cta" aria-label="Prise de contact">
-    <div class="container">
-      <h2 class="reveal">Vous n'avez pas trouvé votre réponse ?</h2>
-      <p class="reveal reveal-delay-1">Contactez-nous directement. Nous vous répondons sous 24 heures ouvrées.</p>
-      <a href="confier-ma-recherche.html" class="btn btn--outline-white btn--lg reveal reveal-delay-2" id="faq-cta-btn">Nous écrire</a>
+      <a class="guide-card" href="meilleures-voitures-electriques-premium-2026.html" data-category="comparatifs">
+        <span class="label">Comparatifs & modèles</span>
+        <h3>Les meilleures voitures électriques premium en 2026</h3>
+        <p>Notre panorama des berlines et SUV électriques premium qui font référence cette année.</p>
+        <span class="guide-card__link">
+          Lire l'article
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </span>
+      </a>
+
+      <a class="guide-card" href="taycan-sport-turismo-vs-cross-turismo.html" data-category="comparatifs">
+        <span class="label">Comparatifs & modèles</span>
+        <h3>Porsche Taycan Sport Turismo vs Cross Turismo</h3>
+        <p>Deux carrosseries, une même plateforme : lequel choisir selon votre usage réel.</p>
+        <span class="guide-card__link">
+          Lire l'article
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </span>
+      </a>
+
+      <a class="guide-card" href="depreciation-vehicules-electriques-premium.html" data-category="marche">
+        <span class="label">Marché & revente</span>
+        <h3>Dépréciation des véhicules électriques premium</h3>
+        <p>Porsche, Mercedes, BMW comparés : ce que révèlent les courbes de valeur résiduelle à 5 ans.</p>
+        <span class="guide-card__link">
+          Lire l'article
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </span>
+      </a>
+
+      <a class="guide-card" href="importer-vehicule-electrique-allemagne.html" data-category="import">
+        <span class="label">Import & démarches</span>
+        <h3>Importer un véhicule électrique premium depuis l'Allemagne</h3>
+        <p>Le guide complet : sourcing, inspection, transport, immatriculation et pièges à éviter.</p>
+        <span class="guide-card__link">
+          Lire l'article
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </span>
+      </a>
+
+      <a class="guide-card" href="soh-batterie-verifier-etat-sante.html" data-category="expertise">
+        <span class="label">Expertise technique</span>
+        <h3>SOH batterie : comment vérifier l'état de santé avant d'acheter</h3>
+        <p>Comprendre, obtenir et interpréter le SOH avant tout engagement sur un véhicule d'occasion.</p>
+        <span class="guide-card__link">
+          Lire l'article
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </span>
+      </a>
+
+      <a class="guide-card" href="courtier-vs-achat-direct.html" data-category="expertise">
+        <span class="label">Notre approche</span>
+        <h3>Courtier automobile vs achat direct concessionnaire</h3>
+        <p>Deux circuits, deux logiques : lequel correspond à votre projet d'acquisition premium.</p>
+        <span class="guide-card__link">
+          Lire l'article
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </span>
+      </a>
+
     </div>
-  </section>
+  </div>
+</section>
 
-
-  <!-- ═══════════════════════════════════════════
-       FOOTER
-  ═══════════════════════════════════════════ -->
-  <footer class="footer" role="contentinfo">
+<footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer__inner">
 
@@ -570,7 +235,7 @@
         <div class="footer__col">
           <h4>Navigation</h4>
           <a href="index.html">Accueil</a>
-          <a href="index.html#methode">Notre méthode</a>
+          <a href="#methode">Notre méthode</a>
           <a href="vehicules-demandes.html">Véhicules demandés</a>
           <a href="faq.html">FAQ</a>
           <a href="guides.html">Guides</a>
@@ -579,10 +244,10 @@
 
         <div class="footer__col">
           <h4>Notre métier</h4>
-          <a href="index.html#methode">Recherche européenne</a>
-          <a href="index.html#methode">Sélection & expertise</a>
-          <a href="index.html#methode">Négociation</a>
-          <a href="index.html#methode">Acquisition sécurisée</a>
+          <a href="#methode">Recherche européenne</a>
+          <a href="#methode">Sélection & expertise</a>
+          <a href="#methode">Négociation</a>
+          <a href="#methode">Acquisition sécurisée</a>
         </div>
 
         <div class="footer__col">
@@ -606,37 +271,37 @@
     </div>
   </footer>
 
-  <script src="main.js"></script>
-  <script>
-    /* ── FAQ sidebar navigation ── */
-    const sidebarLinks = document.querySelectorAll('.faq-sidebar__link');
-    sidebarLinks.forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        sidebarLinks.forEach(function(l) { l.classList.remove('active'); });
-        btn.classList.add('active');
-        const target = document.getElementById(btn.dataset.target);
-        if (target) {
-          const navH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) || 72;
-          const top = target.getBoundingClientRect().top + window.scrollY - navH - 24;
-          window.scrollTo({ top, behavior: 'smooth' });
-        }
+<script>
+  // Nav scroll state (cohérent avec le comportement défini dans style.css)
+  const nav = document.querySelector('.nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('nav--scrolled', window.scrollY > 40);
+  });
+
+  // Menu mobile
+  const burger = document.getElementById('navBurger');
+  const mobileMenu = document.getElementById('navMobile');
+  burger.addEventListener('click', () => {
+    burger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+
+  // Filtre par catégorie
+  const filterButtons = document.querySelectorAll('.guides__filter-btn');
+  const cards = document.querySelectorAll('.guide-card');
+
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+
+      cards.forEach(card => {
+        card.style.display = (filter === 'all' || card.dataset.category === filter) ? '' : 'none';
       });
     });
+  });
+</script>
 
-    /* ── Update active sidebar link on scroll ── */
-    const categories = document.querySelectorAll('.faq-category');
-    window.addEventListener('scroll', function() {
-      const navH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) || 72;
-      let current = '';
-      categories.forEach(function(cat) {
-        if (window.scrollY >= cat.offsetTop - navH - 60) {
-          current = cat.id;
-        }
-      });
-      sidebarLinks.forEach(function(link) {
-        link.classList.toggle('active', link.dataset.target === current);
-      });
-    }, { passive: true });
-  </script>
 </body>
 </html>
