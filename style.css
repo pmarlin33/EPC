@@ -963,10 +963,11 @@ p {
 
 .emotion__bg {
   position: absolute;
-  inset: 0;
+  inset: -30px;
   background-image: url('emotion.jpg');
   background-size: cover;
   background-position: center 82%;
+  transform: scale(1.1);
 }
 
 .emotion__overlay {
