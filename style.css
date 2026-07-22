@@ -307,7 +307,7 @@ p {
   font-family: var(--font-body);
   font-size: 1.05rem;
   font-weight: 500;
-  color: rgba(255,255,255,0.65);
+  color: rgba(255,255,255,0.92);
   transition: color 0.2s var(--ease);
   letter-spacing: 0.01em;
 }
@@ -321,9 +321,14 @@ p {
   color: var(--blue-elec);
 }
 
-.nav__links a.active,
+.nav__links a.active {
+  color: #ffffff !important;
+  font-weight: 600;
+  opacity: 1 !important;
+}
+
 .nav--scrolled .nav__links a.active {
-  color: var(--anthracite);
+  color: var(--anthracite) !important;
   font-weight: 600;
 }
 
@@ -489,8 +494,8 @@ p {
 
 .hero__sub {
   font-size: 1rem;
-  color: rgba(255,255,255,0.5);
-  max-width: 520px;
+  color: rgba(255,255,255,0.85);
+  max-width: 780px;
   line-height: 1.8;
   margin-bottom: 44px;
 }
@@ -949,7 +954,7 @@ p {
 /* ─── EMOTION ─── */
 .emotion {
   position: relative;
-  height: 600px;
+  height: 640px;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -961,7 +966,7 @@ p {
   inset: 0;
   background-image: url('emotion.jpg');
   background-size: cover;
-  background-position: center 30%;
+  background-position: center 82%;
 }
 
 .emotion__overlay {
