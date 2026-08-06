@@ -84,6 +84,42 @@ document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
 })();
 
 
+/* ─── HERO VIDEO AUTOPLAY ─── */
+(function initHeroVideo() {
+  const video = document.getElementById('heroBg');
+  if (!video || video.tagName !== 'VIDEO') return;
+
+  // Force les attributs nécessaires
+  video.muted = true;
+  video.loop = true;
+  video.playsInline = true;
+
+  function tryPlay() {
+    const promise = video.play();
+    if (promise !== undefined) {
+      promise.catch(function () {
+        // Autoplay bloqué — on attend une interaction
+        const unlock = function () {
+          video.play();
+          document.removeEventListener('click', unlock);
+          document.removeEventListener('touchstart', unlock);
+          document.removeEventListener('scroll', unlock);
+        };
+        document.addEventListener('click', unlock, { once: true });
+        document.addEventListener('touchstart', unlock, { once: true });
+        document.addEventListener('scroll', unlock, { once: true, passive: true });
+      });
+    }
+  }
+
+  if (document.readyState === 'complete' || document.readyState === 'interactive') {
+    tryPlay();
+  } else {
+    window.addEventListener('DOMContentLoaded', tryPlay);
+  }
+})();
+
+
 /* ─── HERO PARALLAX (subtle) ─── */
 (function initParallax() {
   const bg = document.getElementById('heroBg');
