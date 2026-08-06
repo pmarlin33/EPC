@@ -86,37 +86,33 @@ document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
 
 /* ─── HERO VIDEO AUTOPLAY ─── */
 (function initHeroVideo() {
-  const video = document.getElementById('heroBg');
-  if (!video || video.tagName !== 'VIDEO') return;
+  var video = document.getElementById('heroVideo');
+  if (!video) return;
 
-  // Force les attributs nécessaires
   video.muted = true;
-  video.loop = true;
-  video.playsInline = true;
+  video.volume = 0;
 
   function tryPlay() {
-    const promise = video.play();
-    if (promise !== undefined) {
-      promise.catch(function () {
-        // Autoplay bloqué — on attend une interaction
-        const unlock = function () {
-          video.play();
-          document.removeEventListener('click', unlock);
-          document.removeEventListener('touchstart', unlock);
-          document.removeEventListener('scroll', unlock);
-        };
-        document.addEventListener('click', unlock, { once: true });
-        document.addEventListener('touchstart', unlock, { once: true });
-        document.addEventListener('scroll', unlock, { once: true, passive: true });
-      });
-    }
+    if (!video.paused) return;
+    video.play().catch(function() {});
   }
 
-  if (document.readyState === 'complete' || document.readyState === 'interactive') {
-    tryPlay();
-  } else {
-    window.addEventListener('DOMContentLoaded', tryPlay);
-  }
+  // Tenter dès que la vidéo est prête
+  video.addEventListener('canplay', tryPlay);
+  video.addEventListener('loadeddata', tryPlay);
+
+  // Charger explicitement la vidéo
+  video.load();
+
+  // Fallback : n'importe quelle interaction relance la vidéo
+  ['click', 'touchstart', 'mousemove', 'scroll', 'keydown'].forEach(function(evt) {
+    document.addEventListener(evt, tryPlay, { once: true, passive: true });
+  });
+
+  // Relancer quand la page redevient visible
+  document.addEventListener('visibilitychange', function() {
+    if (!document.hidden) tryPlay();
+  });
 })();
 
 

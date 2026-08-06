@@ -86,27 +86,19 @@
        HERO
   ═══════════════════════════════════════════ -->
   <section class="hero" aria-labelledby="hero-title">
-    <video class="hero__bg" id="heroBg"
-      src="vehicule.mp4?v=3"
-      autoplay
-      muted
-      loop
-      playsinline
-      preload="auto"
-      disablepictureinpicture
-      aria-hidden="true">
-    </video>
-    <script>
-      (function(){
-        var v = document.getElementById('heroBg');
-        if(!v) return;
-        v.muted = true;
-        v.play().catch(function(){});
-        document.addEventListener('click', function(){ v.play().catch(function(){}); }, {once:true});
-        document.addEventListener('scroll', function(){ v.play().catch(function(){}); }, {once:true, passive:true});
-      })();
-    </script>
+    <div class="hero__bg-wrapper" id="heroBg" aria-hidden="true">
+      <video class="hero__bg-video" id="heroVideo"
+        src="vehicule.mp4"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+        disablepictureinpicture>
+      </video>
+    </div>
     <div class="hero__overlay" aria-hidden="true"></div>
+
 
     <div class="hero__content">
 

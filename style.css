@@ -425,15 +425,20 @@ p {
   background: var(--dark);
 }
 
-.hero__bg {
+.hero__bg-wrapper {
   position: absolute;
   inset: 0;
+  transform-origin: center;
+  will-change: transform;
+  overflow: hidden;
+}
+
+.hero__bg-video {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center 40%;
-  transform-origin: center;
-  will-change: transform;
+  display: block;
 }
 
 .hero__overlay {
