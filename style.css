@@ -1308,9 +1308,24 @@ p {
 .reveal-delay-3 { transition-delay: 0.3s; }
 .reveal-delay-4 { transition-delay: 0.4s; }
 
-/* ─── RESPONSIVE ─── */
+/* ═══════════════════════════════════════════════════════
+   RESPONSIVE DESIGN (Grid & Flexbox)
+   Téléphones, Tablettes et Ordinateurs
+   ═══════════════════════════════════════════════════════ */
+
+/* ─── ORDINATEURS LARGE (>= 1200px) ─── */
+@media (min-width: 1200px) {
+  .container { 
+    max-width: 1200px;
+    padding: 0 40px; 
+  }
+}
+
+/* ─── TABLETTES LARGE & PETITS ORDINATEURS (max-width: 1024px) ─── */
 @media (max-width: 1024px) {
   .container { padding: 0 28px; }
+  
+  /* Grilles / CSS Grid & Flexbox */
   .methode__grid { grid-template-columns: repeat(2, 1fr); }
   .intro__inner { grid-template-columns: 1fr; gap: 48px; }
   .intro__visual { height: 340px; }
@@ -1318,13 +1333,34 @@ p {
   .benefices__grid { gap: 24px 48px; }
   .securite__grid { grid-template-columns: repeat(2, 1fr); }
   .footer__inner { grid-template-columns: 1fr 1fr; gap: 36px; }
+
+  /* Page: Confier ma recherche */
+  .page-hero__inner { grid-template-columns: 1fr; gap: 48px; }
+  .form-page__inner { grid-template-columns: 1fr; gap: 48px; }
+  .form-page__sidebar { position: static; }
+
+  /* Page: FAQ */
+  .faq-layout { grid-template-columns: 1fr; gap: 48px; }
+  .faq-sidebar { position: static; }
+  .faq-sidebar__nav { flex-direction: row; flex-wrap: wrap; gap: 8px; }
+  .faq-sidebar__link { border: 1px solid var(--grey-mid); padding: 8px 16px; border-radius: 100px; }
+  .faq-sidebar__link.active { background: var(--anthracite); color: var(--white); border-color: var(--anthracite); }
 }
 
+/* ─── TABLETTES STANDARD (max-width: 992px) ─── */
+@media (max-width: 992px) {
+  /* Page: Véhicules demandés */
+  .catalog-grid { grid-template-columns: 1fr; }
+  .vehicle-card__img { height: 280px; }
+}
+
+/* ─── TABLETTES PORTRAIT & GRANDS TÉLÉPHONES (max-width: 768px) ─── */
 @media (max-width: 768px) {
   :root { --nav-h: 60px; }
   .section { padding: 80px 0; }
   .container { padding: 0 20px; }
 
+  /* Navbar avec Flexbox */
   .nav__links, .nav__cta { display: none; }
   .nav__burger { display: flex; }
 
@@ -1334,6 +1370,7 @@ p {
   .hero__content { padding: 0 20px 80px; }
   .hero__scroll { display: none; }
 
+  /* Grilles 1 colonne (CSS Grid) */
   .methode__grid { grid-template-columns: 1fr; border-radius: var(--radius); }
   .acquisitions__grid { grid-template-columns: 1fr; }
   .benefices__grid { grid-template-columns: 1fr; gap: 0; }
@@ -1349,9 +1386,29 @@ p {
   .timeline::before { left: 17px; }
   .timeline__step { width: 34px; height: 34px; font-size: 0.72rem; }
   .timeline__item { gap: 24px; }
+
+  /* Page: Confier ma recherche */
+  .page-hero { padding-top: calc(var(--nav-h) + 48px); padding-bottom: 56px; }
+  .form-card { padding: 28px 20px; }
+  .form-card .form__grid { grid-template-columns: 1fr; }
+  .form-card .form__group--full { grid-column: 1; }
+
+  /* Page: FAQ & Véhicules & Guides */
+  .faq-page-hero, .demandes-hero { padding-top: calc(var(--nav-h) + 48px); padding-bottom: 56px; }
+  .vehicle-card__content { padding: 24px; }
+  .guides__grid { grid-template-columns: 1fr; border-radius: var(--radius); }
+  .guide-card { padding: 36px 28px; }
+}
+
+/* ─── TÉLÉPHONES (max-width: 640px / 480px) ─── */
+@media (max-width: 640px) {
+  /* Page: Article */
+  .article-back__inner, .article-hero__inner, .article-body { padding-left: 24px; padding-right: 24px; }
+  .article-cta { padding: 36px 24px; }
 }
 
 @media (max-width: 480px) {
+  /* Composants Flexbox ajustés pour mobile */
   .hero__trust { gap: 16px; }
   .acq__card { border-radius: var(--radius); }
 }
