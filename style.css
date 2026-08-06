@@ -294,7 +294,30 @@ p {
   height: 90px;
   width: auto;
   object-fit: contain;
-  transition: opacity 0.3s var(--ease);
+  transition: opacity 0.35s var(--ease);
+}
+
+/* Logo blanc (texte blanc) : visible sur nav transparente (hero) */
+.nav__logo-dark {
+  display: block;
+  opacity: 1;
+}
+
+/* Logo noir (texte noir) : visible sur nav blanche (scrolled) */
+.nav__logo-light {
+  display: none;
+  opacity: 0;
+}
+
+/* Quand la nav est scrollée → switch vers le logo noir */
+.nav--scrolled .nav__logo-dark {
+  display: none;
+  opacity: 0;
+}
+
+.nav--scrolled .nav__logo-light {
+  display: block;
+  opacity: 1;
 }
 
 .nav__links {
