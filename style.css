@@ -472,13 +472,17 @@ p {
 
 /* ─── HERO ─── */
 .hero {
-  min-height: 100svh;
+  min-height: 88svh;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   overflow: hidden;
   background: var(--dark);
+}
+
+@media (max-width: 768px) {
+  .hero { min-height: 100svh; }
 }
 
 .hero__bg-wrapper {
