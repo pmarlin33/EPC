@@ -1333,6 +1333,109 @@ p {
   display: block;
 }
 
+/* ─── IMPLANTATIONS ─── */
+.implantations__wrapper {
+  background: var(--white);
+  border: 1px solid var(--grey-mid);
+  border-radius: var(--radius-lg);
+  padding: 48px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
+}
+
+.implantations__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.implantations__map-container {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.france-map-img {
+  width: 100%;
+  height: auto;
+  max-height: 460px;
+  object-fit: contain;
+  border-radius: var(--radius);
+  border: 1px solid var(--grey-light);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.implantations__cards {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.implantation-card {
+  background: var(--off-white);
+  border: 1px solid var(--grey-light);
+  border-radius: var(--radius);
+  padding: 28px;
+  transition: transform 0.3s var(--ease), border-color 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+
+.implantation-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--blue-border);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.implantation-card__header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.implantation-card__icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--blue-subtle);
+  color: var(--blue-elec);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.implantation-card__header h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--anthracite);
+  margin-bottom: 2px;
+}
+
+.implantation-card__badge {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--blue-elec);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.implantation-card__address {
+  font-size: 0.95rem;
+  color: var(--anthracite);
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.implantation-card__desc {
+  font-size: 0.9rem;
+  color: var(--grey-text);
+  line-height: 1.6;
+}
+
 /* ─── FOOTER ─── */
 .footer {
   background: var(--anthracite);
@@ -1616,6 +1719,15 @@ p {
 
   .acquisitions__grid {
     grid-template-columns: 1fr;
+  }
+
+  .implantations__wrapper {
+    padding: 28px 20px;
+  }
+
+  .implantations__grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
   }
 
   .benefices__grid {
