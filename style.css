@@ -22,7 +22,7 @@
   --off-white: #f8f8f6;
   --grey-light: #f0f0ee;
   --grey-mid: #d4d4d0;
-  --grey-text: #8a8a85;
+  --grey-text: #4b5563;
   --anthracite: #1e1e1e;
   --dark: #111111;
   --blue-deep: #0a2463;
@@ -49,7 +49,7 @@
 /* ─── BASE ─── */
 html {
   scroll-behavior: smooth;
-  font-size: 16px;
+  font-size: 17.5px;
 }
 
 body {
@@ -122,6 +122,7 @@ h3 {
 
 p {
   font-family: var(--font-body);
+  font-size: 1.05rem;
   font-weight: 400;
   line-height: 1.75;
   color: var(--grey-text);
@@ -167,12 +168,12 @@ p {
 }
 
 .section--dark .label {
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.7);
   letter-spacing: 0.14em;
 }
 
 .section--dark p {
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(255, 255, 255, 0.82);
 }
 
 .section__head {
@@ -192,9 +193,9 @@ p {
 }
 
 .section__sub {
-  font-size: 1.05rem;
-  max-width: 540px;
-  line-height: 1.8;
+  font-size: 1.15rem;
+  max-width: 620px;
+  line-height: 1.75;
 }
 
 /* ─── BUTTONS ─── */
@@ -782,7 +783,7 @@ p {
 }
 
 .methode__card p {
-  font-size: 0.875rem;
+  font-size: 0.98rem;
   line-height: 1.75;
   color: var(--grey-text);
 }
@@ -820,7 +821,7 @@ p {
 }
 
 .benefice__text p {
-  font-size: 0.88rem;
+  font-size: 1.02rem;
   line-height: 1.75;
 }
 
@@ -1062,13 +1063,13 @@ p {
 }
 
 .securite__item h3 {
-  font-size: 0.95rem;
+  font-size: 1.15rem;
   margin-bottom: 10px;
   color: var(--anthracite);
 }
 
 .securite__item p {
-  font-size: 0.83rem;
+  font-size: 0.98rem;
   line-height: 1.7;
 }
 
@@ -1323,10 +1324,10 @@ p {
 .faq__answer {
   display: none;
   padding: 0 0 24px;
-  font-size: 0.9rem;
-  line-height: 1.8;
+  font-size: 1.02rem;
+  line-height: 1.75;
   color: var(--grey-text);
-  max-width: 580px;
+  max-width: 640px;
 }
 
 .faq__item.open .faq__answer {
@@ -1472,19 +1473,19 @@ p {
 }
 
 .footer__brand p {
-  font-size: 0.83rem;
-  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.75);
   line-height: 1.75;
-  max-width: 240px;
+  max-width: 280px;
 }
 
 .footer__col h4 {
   font-family: var(--font-body);
-  font-size: 0.68rem;
+  font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.5);
   margin-bottom: 20px;
 }
 
@@ -1492,8 +1493,8 @@ p {
 .footer__col p {
   display: block;
   font-family: var(--font-body);
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.78);
   transition: color 0.2s var(--ease);
   margin-bottom: 10px;
   line-height: 1.5;
