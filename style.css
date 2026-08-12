@@ -1064,13 +1064,13 @@ p + p {
   width: 48px;
   height: 48px;
   margin: 0 auto 20px;
-  color: var(--anthracite);
+  color: var(--blue-elec);
 }
 
 .securite__item h3 {
   font-size: 1.15rem;
   margin-bottom: 10px;
-  color: var(--anthracite);
+  color: var(--blue-elec);
 }
 
 .securite__item p {
@@ -1135,32 +1135,33 @@ p + p {
   align-items: center;
   text-align: center;
   padding: 24px 16px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(176, 141, 87, 0.08);
+  border: 1px solid rgba(176, 141, 87, 0.25);
   border-radius: var(--radius-lg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  transition: transform 0.3s var(--ease), border-color 0.3s var(--ease), box-shadow 0.3s var(--ease);
+  transition: transform 0.3s var(--ease), border-color 0.3s var(--ease), box-shadow 0.3s var(--ease), background 0.3s var(--ease);
 }
 
 .emotion__badge:hover {
   transform: translateY(-4px);
-  border-color: rgba(59, 130, 246, 0.5);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+  background: rgba(176, 141, 87, 0.15);
+  border-color: var(--blue-elec);
+  box-shadow: 0 12px 32px rgba(176, 141, 87, 0.25);
 }
 
 .emotion__icon {
   width: 42px;
   height: 42px;
   margin-bottom: 14px;
-  color: #3b82f6;
-  filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.5));
+  color: var(--blue-elec);
+  filter: drop-shadow(0 0 10px rgba(176, 141, 87, 0.5));
 }
 
 .emotion__badge span {
   font-size: 1rem;
   font-weight: 600;
-  color: #ffffff;
+  color: var(--color-text-on-dark);
   line-height: 1.35;
   letter-spacing: -0.01em;
 }
