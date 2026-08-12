@@ -873,15 +873,18 @@ p + p {
   position: absolute;
   top: 16px;
   left: 16px;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(11, 18, 32, 0.88);
+  border: 1px solid var(--blue-border);
   border-radius: 100px;
-  padding: 4px 12px;
-  font-family: var(--font-body);
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  color: var(--anthracite);
-  text-transform: uppercase;
+  padding: 5px 14px;
+  font-family: var(--font-head);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--blue-elec);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .acq__body {
