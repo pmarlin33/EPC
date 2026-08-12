@@ -221,9 +221,9 @@ p + p {
 }
 
 .btn--primary {
-  background: var(--anthracite);
-  color: var(--white);
-  border-color: var(--anthracite);
+  background: transparent;
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
 .btn--primary:hover {
