@@ -297,19 +297,20 @@ p {
 }
 
 .nav__inner {
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 24px;
   width: 100%;
   display: flex;
   align-items: center;
-  gap: 48px;
+  gap: 40px;
 }
 
 .nav__logo {
   display: flex;
   align-items: center;
   flex-shrink: 0;
+  margin-left: -8px;
 }
 
 .nav__logo-img {
@@ -344,13 +345,13 @@ p {
 
 .nav__links {
   display: flex;
-  gap: 32px;
+  gap: 28px;
   margin-left: auto;
 }
 
 .nav__links a {
   font-family: var(--font-body);
-  font-size: 1.05rem;
+  font-size: 0.88rem;
   font-weight: 500;
   color: rgba(255, 255, 255, 0.92);
   transition: color 0.2s var(--ease);
