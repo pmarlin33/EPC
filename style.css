@@ -36,7 +36,7 @@
   --font-body: 'Instrument Sans', sans-serif;
 
   /* Spacing */
-  --nav-h: 110px;
+  --nav-h: 140px;
   --radius-sm: 6px;
   --radius: 10px;
   --radius-lg: 16px;
@@ -279,107 +279,109 @@ p + p {
   left: 0;
   right: 0;
   z-index: 1000;
-  height: var(--nav-h);
+  padding: 16px 0 12px;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  transition: background 0.3s var(--ease), box-shadow 0.3s var(--ease), border-color 0.3s var(--ease);
-  border-bottom: 1px solid transparent;
-}
-
-.nav.nav--light {
-  /* Hero has dark bg, nav starts transparent over it */
+  transition: background 0.3s var(--ease), box-shadow 0.3s var(--ease), border-color 0.3s var(--ease), padding 0.3s var(--ease);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(7, 20, 29, 0.65);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
 
 .nav.nav--scrolled {
-  background: rgba(255, 255, 255, 0.97);
-  border-bottom-color: var(--grey-light);
-  box-shadow: 0 1px 0 var(--grey-light);
-}
-
-.nav--dark-hero.nav--scrolled {
-  background: rgba(255, 255, 255, 0.97);
+  background: rgba(7, 20, 29, 0.96);
+  border-bottom-color: rgba(167, 175, 178, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  padding: 10px 0 10px;
 }
 
 .nav__inner {
-  max-width: 1280px;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 32px;
   width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 40px;
+  justify-content: center;
+  gap: 12px;
 }
 
 .nav__logo {
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-shrink: 0;
-  margin-left: -8px;
+  margin: 0 auto;
 }
 
 .nav__logo-img {
-  height: 56px;
+  height: 64px;
   width: auto;
   object-fit: contain;
-  transition: opacity 0.35s var(--ease);
+  transition: all 0.35s var(--ease);
 }
 
-/* Logo blanc (texte blanc) : visible sur nav transparente (hero) */
+.nav.nav--scrolled .nav__logo-img {
+  height: 48px;
+}
+
+/* Logo blanc visible sur le fond bleu nuit */
 .nav__logo-dark {
-  display: block;
-  opacity: 1;
+  display: block !important;
+  opacity: 1 !important;
 }
 
-/* Logo noir (texte noir) : visible sur nav blanche (scrolled) */
 .nav__logo-light {
-  display: none;
-  opacity: 0;
-}
-
-/* Quand la nav est scrollée → switch vers le logo noir */
-.nav--scrolled .nav__logo-dark {
-  display: none;
-  opacity: 0;
-}
-
-.nav--scrolled .nav__logo-light {
-  display: block;
-  opacity: 1;
+  display: none !important;
+  opacity: 0 !important;
 }
 
 .nav__links {
   display: flex;
-  gap: 28px;
-  margin-left: auto;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(18px, 3.5vw, 48px);
+  width: 100%;
+  margin: 0 auto;
+  padding: 4px 0 0;
+  list-style: none;
 }
 
 .nav__links a {
   font-family: var(--font-body);
-  font-size: 0.88rem;
+  font-size: 0.95rem;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.92);
-  transition: color 0.2s var(--ease);
-  letter-spacing: 0.01em;
-}
-
-.nav--scrolled .nav__links a {
-  color: var(--anthracite);
+  color: rgba(245, 243, 238, 0.9);
+  transition: all 0.25s var(--ease);
+  letter-spacing: 0.02em;
+  padding: 4px 0;
+  position: relative;
 }
 
 .nav__links a:hover,
 .nav--scrolled .nav__links a:hover {
-  color: var(--blue-elec);
+  color: #B08D57 !important;
 }
 
-.nav__links a.active {
+.nav__links a.active,
+.nav--scrolled .nav__links a.active {
   color: #ffffff !important;
   font-weight: 600;
   opacity: 1 !important;
 }
 
-.nav--scrolled .nav__links a.active {
-  color: var(--anthracite) !important;
-  font-weight: 600;
+.nav__links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--accent-glacier);
+  border-radius: 2px;
 }
 
 .nav__cta {
