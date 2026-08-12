@@ -129,7 +129,7 @@ p {
 }
 
 p + p {
-  margin-top: 1.25em;
+  margin-top: 20px;
 }
 
 .label {
