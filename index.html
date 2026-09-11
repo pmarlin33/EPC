@@ -46,7 +46,7 @@
     rel="stylesheet" />
 
   <!-- Styles -->
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=2" />
 </head>
 
 <body>
@@ -333,10 +333,20 @@
 
         </div>
 
-        <div class="intro__visual reveal reveal-delay-2">
-          <img src="fondateurs.jpg" alt="Raphaël et Paul — Fondateurs de Electric Premium Cars" loading="lazy" />
-          <div class="intro__visual-caption">
-            <p>Raphaël &amp; Paul · Fondateurs associés</p>
+        <div class="intro__visuals reveal reveal-delay-2" style="display: flex; flex-direction: row; gap: 16px; width: 100%; height: 380px;">
+          <div class="intro__card" style="flex: 1; min-width: 0; position: relative; height: 100%; border-radius: 16px; overflow: hidden; background: #f0f0ee;">
+            <img src="raphael.jpg" alt="Raphaël — Co-fondateur de Electric Premium Cars" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; object-position: center 20%; display: block;" />
+            <div class="intro__card-caption">
+              <div class="intro__card-name">Raphaël</div>
+              <div class="intro__card-role">Co-fondateur</div>
+            </div>
+          </div>
+          <div class="intro__card" style="flex: 1; min-width: 0; position: relative; height: 100%; border-radius: 16px; overflow: hidden; background: #f0f0ee;">
+            <img src="paul.jpg" alt="Paul — Co-fondateur de Electric Premium Cars" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; object-position: center 20%; display: block;" />
+            <div class="intro__card-caption">
+              <div class="intro__card-name">Paul</div>
+              <div class="intro__card-role">Co-fondateur</div>
+            </div>
           </div>
         </div>
       </div>
