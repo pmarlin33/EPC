@@ -221,9 +221,9 @@ p + p {
 }
 
 .btn--primary {
-  background: transparent;
+  background: #B08D57;
   color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.4);
+  border-color: #B08D57;
 }
 
 .btn--primary:hover {

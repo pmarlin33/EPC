@@ -175,7 +175,7 @@ document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
 
 /* ─── FORM SUBMIT ─── */
 (function initForm() {
-  const form = document.getElementById('contact-form');
+  const form = document.getElementById('lead-form');
   if (!form) return;
 
   form.addEventListener('submit', function (e) {
