@@ -356,16 +356,16 @@
           <p class="form-card__title">Votre projet en quelques mots</p>
           <p class="form-card__sub">Tous les champs marqués d'un astérisque sont requis.</p>
 
-          <form class="form__grid" action="#" method="POST" id="contact-form" novalidate aria-label="Formulaire de confiance — Electric Premium Cars">
+          <form class="form__grid" action="#" method="POST" id="lead-form" novalidate aria-label="Formulaire de confiance — Electric Premium Cars">
 
             <div class="form__group">
               <label class="form__label" for="f-name">Nom complet <span aria-label="requis">*</span></label>
-              <input class="form__input" type="text" id="f-name" name="name" placeholder="Votre nom" autocomplete="name" required />
+              <input class="form__input" type="text" id="f-name" name="nom_complet" placeholder="Votre nom" autocomplete="name" required />
             </div>
 
             <div class="form__group">
               <label class="form__label" for="f-phone">Téléphone</label>
-              <input class="form__input" type="tel" id="f-phone" name="phone" placeholder="+33 6 00 00 00 00" autocomplete="tel" />
+              <input class="form__input" type="tel" id="f-phone" name="telephone" placeholder="+33 6 00 00 00 00" autocomplete="tel" />
             </div>
 
             <div class="form__group form__group--full">
@@ -375,7 +375,7 @@
 
             <div class="form__group form__group--full">
               <label class="form__label" for="f-model">Modèle recherché</label>
-              <input class="form__input" type="text" id="f-model" name="model" placeholder="Ex : Porsche Taycan, BMW iX, Mercedes EQS…" />
+              <input class="form__input" type="text" id="f-model" name="modele_recherche" placeholder="Ex : Porsche Taycan, BMW iX, Mercedes EQS…" />
             </div>
 
             <div class="form__group">
@@ -388,17 +388,17 @@
 
             <div class="form__group">
               <label class="form__label" for="f-mileage">Kilométrage max</label>
-              <input class="form__input" type="number" id="f-mileage" name="mileage_max" placeholder="Ex : 50 000" min="0" step="1000" />
+              <input class="form__input" type="number" id="f-mileage" name="kilometrage_max" placeholder="Ex : 50 000" min="0" step="1000" />
             </div>
 
             <div class="form__group">
               <label class="form__label" for="f-year">Année min</label>
-              <input class="form__input" type="number" id="f-year" name="year_min" placeholder="Ex : 2021" min="2000" step="1" />
+              <input class="form__input" type="number" id="f-year" name="annee_min" placeholder="Ex : 2021" min="2000" step="1" />
             </div>
 
             <div class="form__group">
               <label class="form__label" for="f-delay">Délai souhaité</label>
-              <select class="form__select" id="f-delay" name="delay">
+              <select class="form__select" id="f-delay" name="delai_souhaite">
                 <option value="" disabled selected>Sélectionner</option>
                 <option value="asap">Le plus tôt possible</option>
                 <option value="1m">Sous 1 mois</option>
@@ -409,7 +409,7 @@
 
             <div class="form__group form__group--full">
               <label class="form__label" for="f-comment">Précisions sur votre projet</label>
-              <textarea class="form__textarea" id="f-comment" name="comment" placeholder="Options souhaitées, couleur, usage, questions particulières…" rows="5"></textarea>
+              <textarea class="form__textarea" id="f-comment" name="precisions" placeholder="Options souhaitées, couleur, usage, questions particulières…" rows="5"></textarea>
             </div>
 
             <div class="form__submit">
@@ -489,6 +489,29 @@
       'https://vciypronfrcntzijaytu.supabase.co',
       'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZjaXlwcm9uZnJjbnR6aWpheXR1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk0NjUxMDgsImV4cCI6MjEwNTA0MTEwOH0.57pl9QLKDgTd4i8UqBmvtkLIzWX0n0zE495A0nl8eqk'
     );
+  </script>
+
+  <script>
+  document.getElementById('lead-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.target);
+    const lead = Object.fromEntries(formData.entries());
+
+    ['budget_min', 'budget_max', 'kilometrage_max', 'annee_min'].forEach(champ => {
+      lead[champ] = lead[champ] ? parseInt(lead[champ]) : null;
+    });
+
+    const { error } = await supabase.from('leads').insert(lead);
+
+    if (error) {
+      console.error(error);
+      alert('Erreur, réessaie.');
+    } else {
+      alert('Merci, ta demande a bien été envoyée !');
+      e.target.reset();
+    }
+  });
   </script>
 </body>
 </html>
