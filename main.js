@@ -178,33 +178,61 @@ document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
   const form = document.getElementById('lead-form');
   if (!form) return;
 
-  form.addEventListener('submit', function (e) {
+  form.addEventListener('submit', async function (e) {
     e.preventDefault();
 
-    const btn = document.getElementById('form-submit-btn');
-    const name = document.getElementById('f-name').value.trim();
+    const name  = document.getElementById('f-name').value.trim();
     const email = document.getElementById('f-email').value.trim();
 
+    // Validation : nom et email obligatoires
     if (!name || !email) {
-      // Simple inline validation
       if (!name) document.getElementById('f-name').focus();
-      else document.getElementById('f-email').focus();
+      else       document.getElementById('f-email').focus();
       return;
     }
 
-    // Feedback
+    const btn = document.getElementById('form-submit-btn');
+
+    // Lecture de tous les champs
+    const toInt = function (id) {
+      const v = document.getElementById(id).value.trim();
+      return v ? parseInt(v, 10) : null;
+    };
+
+    const lead = {
+      nom_complet:      name,
+      telephone:        document.getElementById('f-phone').value.trim()   || null,
+      email:            email,
+      modele_recherche: document.getElementById('f-model').value.trim()   || null,
+      budget_min:       toInt('f-budget-min'),
+      budget_max:       toInt('f-budget-max'),
+      kilometrage_max:  toInt('f-mileage'),
+      annee_min:        toInt('f-year'),
+      delai_souhaite:   document.getElementById('f-delay').value         || null,
+      precisions:       document.getElementById('f-comment').value.trim() || null,
+    };
+
+    // Envoi vers Supabase
+    const { error } = await window.supabase.from('leads').insert(lead);
+
+    if (error) {
+      console.error('Supabase insert error:', error);
+      return; // on ne change pas l'UI en cas d'erreur
+    }
+
+    // Succès : feedback visuel
     if (btn) {
       btn.textContent = 'Message envoyé ✓';
-      btn.disabled = true;
+      btn.disabled    = true;
       btn.style.opacity = '0.6';
     }
 
-    // Reset after 4s (demo)
+    // Reset après 4s
     setTimeout(function () {
       form.reset();
       if (btn) {
-        btn.textContent = 'Démarrer ma recherche';
-        btn.disabled = false;
+        btn.textContent   = 'Démarrer ma recherche';
+        btn.disabled      = false;
         btn.style.opacity = '1';
       }
     }, 4000);
