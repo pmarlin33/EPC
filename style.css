@@ -2166,3 +2166,23 @@ p + p {
   border-bottom: none;
   padding: 14px 20px;
 }
+
+/* ─── HERO VIDÉO — écrans verticaux (téléphone, tablette portrait) ───
+   La vidéo est en 16:9 : en plein écran vertical, le recadrage « cover »
+   ne garderait qu'un quart de l'image, très agrandi. On garde le texte
+   par-dessus comme sur ordinateur, mais la vidéo est affichée en largeur
+   (légèrement agrandie) et fondue en haut et en bas dans le fond sombre. */
+@media (max-aspect-ratio: 1/1) {
+  .hero__bg-video {
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    width: 140%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 18%, #000 82%, transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, #000 18%, #000 82%, transparent 100%);
+  }
+}
